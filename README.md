@@ -3,5 +3,5 @@ A fresh new homepage with all your links, while continuing to look minimal and c
 ## Disclaimer: This only works on Chrome and Chromium-based browsers.
 ## How to install
 ### Go to chrome://extensions.
-![developer mode](https://i.imgur.com/YBm1UiD.png)
 ### Enable Developer Mode by flicking this button.
+![developer mode](https://i.imgur.com/YBm1UiD.png)
