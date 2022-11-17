@@ -4,4 +4,4 @@ A fresh new homepage with all your links, while continuing to look minimal and c
 ## How to install
 Go to chrome://extensions.
 Enable Developer Mode by flicking this button.
-https://i.imgur.com/YBm1UiD.png
+![alt text](https://i.imgur.com/YBm1UiD.png)
