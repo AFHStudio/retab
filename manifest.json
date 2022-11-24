@@ -1,14 +1,23 @@
 {
-    "manifest_version": 3,
-    "name": "Basic New Tab Page",
+    "manifest_version": 2,
+    "name": "New Tab Revamped",
     "version": "1.0",
-    "description": "A clean new tab page without clutter.",
-    "author": "AFHStudio",
+  
+    "description": "A clean New Tab Page.",
+  
+    "icons": {
+      "128": "128.png",
+      "16": "16.png"
+    },
+  
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "newtab@afhstudio.ml"
+      }
+    },
+    
     "chrome_url_overrides" : {
       "newtab": "home.html"
-    },
-    "icons": {
-      "16": "16.png",
-      "128": "128.png"
-    }    
+    }
+    
   }
