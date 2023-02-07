@@ -1,14 +1,23 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Homepage Revamped",
     "version": "2.0.0",
-    "description": "A minimal new tab page without clutter.",
-    "author": "AFHStudio",
+  
+    "description": "A useful new tab page, while continuing to look clean.",
+  
+    "icons": {
+      "128": "128.png",
+      "16": "16.png"
+    },
+  
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "homepagerevamped@afhstudio.ml"
+      }
+    },
+    
     "chrome_url_overrides" : {
       "newtab": "home.html"
-    },
-    "icons": {
-      "16": "16.png",
-      "128": "128.png"
-    }    
+    }
+    
   }
