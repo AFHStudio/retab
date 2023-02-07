@@ -4,22 +4,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>New Tab</title>
         <link rel="stylesheet" href="style.css">
-        <script src="a1ad0aaccb.js"></script>
-        <script src="time.js" defer></script>
-        <script src="greet.js" defer></script>
+        <link rel="stylesheet" id="themestylesheet" href="themes/default.css">
+        <script src="a1ad0aaccb.js" defer></script>
+        <script src="functions.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
     </head>
     <body>
-        <section class="main">
-            <h1 id="welcome">Welcome,</h1> 
-            <a href="https://google.com/"><i class="fa-brands fa-google"></i></a>
-            <a href="https://youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://open.spotify.com"><i class="fa-brands fa-spotify"></i></a>
-            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://discord.com/channels/@me"><i class="fa-brands fa-discord"></i></a>
+        <div class="settingscontainer" id="settingscontainer">
+            <button class="settingsbutton" id="settingsbutton1"><i class="fa-solid fa-x"></i></button>
+            <h1>Settings</h1>
+            <h3>Choose a theme:</h3>
+            <select id="themeselector" class="themeselector">
+                <option value="default">Default</option>
+                <option value="retro">Retro</option>
+                <option value="redshards">Red Black Shards</option>
+                <option value="blueshards">Blue Black Shards</option>
+                <option value="2basic4you">2basic4you</option>
+            </select>
+            <h3>Set a new name:</h3>
+            <input type="text" id="nameinput"/>
+            <input type="button" value="Set" class="setnamebutton" id="setnamebutton"/>
+            <p class="newnamesaveinfo">Changes are saved after you refresh the page.</p>
+            <h3>Change your search engine:</h3>
+            <select id="searchenginechooser">
+                <option value="google">Google</option>
+                <option value="duckduckgo">DuckDuckGo</option>
+                <option value="bravesearch">Brave Search</option>
+                <option value="ecosia">Ecosia</option>
+                <option value="bing">Bing</option>
+            </select>
+            <p class="searchenginesaveinfo">Changes are saved after you refresh the page.</p>
+        </div>
+        <section class="main" id="main">
+            <button class="settingsbutton" id="settingsbutton2"><i class="fa-solid fa-gear"></i></button>
             <div class="datetime">
-                <div class="time"></div>
                 <div class="date"></div>
+                <div class="time"></div>
             </div>
+            <div class="quicklinks">
+                <a href="https://youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
+                <a href="https://open.spotify.com"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://discord.com/channels/@me"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            <h1 id="welcome"></h1>
+            <div class="search">
+                <form action="https://google.com/search" method="get" class="searchbar" id="searchbar">
+                    <input type="text" placeholder="search the web" name="q">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+            <p class="quote" id="quote"></p>
         </section>
         </div>
     </body>

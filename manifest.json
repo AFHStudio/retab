@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Basic New Tab Page",
-    "version": "1.0",
-    "description": "A clean new tab page without clutter.",
+    "name": "Homepage Revamped",
+    "version": "2.0.0",
+    "description": "A minimal new tab page without clutter.",
     "author": "AFHStudio",
     "chrome_url_overrides" : {
       "newtab": "home.html"

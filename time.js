@@ -42,9 +42,9 @@ function formatDate(date) {
     "December"
   ];
 
-  return `${DAYS[date.getDay()]}, ${
+  return `${DAYS[date.getDay()]} ${
     MONTHS[date.getMonth()]
-  } ${date.getDate()} ${date.getFullYear()}`;
+  } ${date.getDate()}, ${date.getFullYear()}`;
 }
 
 setInterval(() => {
