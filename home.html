@@ -13,6 +13,7 @@
         <div class="settingscontainer" id="settingscontainer">
             <button class="settingsbutton" id="settingsbutton1"><i class="fa-solid fa-x"></i></button>
             <h1>Settings</h1>
+            <p class="newnamesaveinfo">Changes are saved after you refresh the page.</p>
             <h3>Choose a theme:</h3>
             <select id="themeselector" class="themeselector">
                 <option value="default">Default</option>
@@ -20,11 +21,11 @@
                 <option value="redshards">Red Black Shards</option>
                 <option value="blueshards">Blue Black Shards</option>
                 <option value="2basic4you">2basic4you</option>
+                <option value="classroom">Classroom/School</option>
             </select>
             <h3>Set a new name:</h3>
             <input type="text" id="nameinput"/>
             <input type="button" value="Set" class="setnamebutton" id="setnamebutton"/>
-            <p class="newnamesaveinfo">Changes are saved after you refresh the page.</p>
             <h3>Change your search engine:</h3>
             <select id="searchenginechooser">
                 <option value="google">Google</option>
@@ -33,7 +34,9 @@
                 <option value="ecosia">Ecosia</option>
                 <option value="bing">Bing</option>
             </select>
-            <p class="searchenginesaveinfo">Changes are saved after you refresh the page.</p>
+            <h3>Change your background:</h3>
+            <input type="file" accept="image/*" id="imagechooser" class="imagechooser">
+            <input type="button" value="Reset Background" class="resetbackgroundbutton" id="resetbackgroundbutton"/>
         </div>
         <section class="main" id="main">
             <button class="settingsbutton" id="settingsbutton2"><i class="fa-solid fa-gear"></i></button>
@@ -42,11 +45,11 @@
                 <div class="time"></div>
             </div>
             <div class="quicklinks">
-                <a href="https://youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
-                <a href="https://open.spotify.com"><i class="fa-brands fa-spotify"></i></a>
-                <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://discord.com/channels/@me"><i class="fa-brands fa-discord"></i></a>
+                <a id="youtube" href="https://youtube.com/"><i id="youtubeicon" class="fa-brands fa-youtube"></i></a>
+                <a id="github" href="https://github.com/"><i id="githubicon" class="fa-brands fa-github"></i></a>
+                <a id="spotify" href="https://open.spotify.com"><i id="spotifyicon" class="fa-brands fa-spotify"></i></a>
+                <a id="twitter" href="https://twitter.com/"><i id="twittericon" class="fa-brands fa-twitter"></i></a>
+                <a id="discord" href="https://discord.com/channels/@me"><i id="discordicon" class="fa-brands fa-discord"></i></a>
                 </div>
             <h1 id="welcome"></h1>
             <div class="search">

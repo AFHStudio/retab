@@ -9,13 +9,13 @@
     margin: auto;
     text-align: left;
     padding-top: 100px;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nature);
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?office,nature);
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 body {
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nature);
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?office,nature);
     background-size: 100%;
     background-repeat: no-repeat;
     height: 600px;
@@ -118,6 +118,30 @@ body {
     color:rgb(255, 0, 0);
     transform: scale(1.5);
 }
+.fa-chalkboard{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    padding: 20px 15px;
+    animation: fadeIn 2s;
+    transition: transform .2s;
+    text-align: center;
+}
+.fa-chalkboard:hover{
+    color:rgb(255, 0, 0);
+    transform: scale(1.5);
+}
+.fa-video{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    padding: 20px 15px;
+    animation: fadeIn 2s;
+    transition: transform .2s;
+    text-align: center;
+}
+.fa-video:hover{
+    color:rgb(255, 0, 0);
+    transform: scale(1.5);
+}
 .quicklinks{
     text-align: center;
     width: 50%;
@@ -128,7 +152,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-@media(min-height: 500px){
+@media(min-width: 600px){
     .main{
         background-size: fill;
         background-position: auto;

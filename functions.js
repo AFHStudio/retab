@@ -25,7 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
  document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('settingsbutton2').addEventListener('click', showsettings, false);
  }, false)
+ document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('resetbackgroundbutton').addEventListener('click', resetbg, false);
+ }, false)   
 
+function resetbg(){
+  localStorage.removeItem("background")
+}
 
 function initThemeSelector() {
     const themeselect = document.getElementById("themeselector");
@@ -47,6 +53,21 @@ function initThemeSelector() {
 }
 initThemeSelector();
 
+const theme =  localStorage.getItem("theme")
+if (theme === "classroom") {
+  const github = document.getElementById("githubicon")
+  github.setAttribute("class", "fa-solid fa-chalkboard")
+  const githublink = document.getElementById("github")
+  githublink.setAttribute("href", "https://classroom.google.com")
+  const discord = document.getElementById("discordicon")
+  discord.setAttribute("class", "fa-brands fa-google-drive")
+  const discordlink = document.getElementById("discord")
+  discordlink.setAttribute("href", "https://drive.google.com")
+  const twitter = document.getElementById("twittericon")
+  twitter.setAttribute("class", "fa-solid fa-video")
+  const twitterlink = document.getElementById("twitter")
+  twitterlink.setAttribute("href", "https://meet.google.com")
+}
 
 const timeElement = document.querySelector(".time");
 const dateElement = document.querySelector(".date");
@@ -139,7 +160,7 @@ else if (hrs >= 17 && hrs <= 24)
               '"If you can dream it, you can do it."',
               '"Do what you can, with what you have, where you are."',
               '"Do the best you can. No one can do more than that."',
-              '"If you change the way you look at things, the things you look at change."',
+              '"If you change the way you look at things, the things you look at change."'
             ];
             var pick = Math.floor(Math.random() * (quotes.length));
           document.getElementById("quote").innerText = (quotes[pick]);
@@ -171,3 +192,30 @@ else if (hrs >= 17 && hrs <= 24)
       if (searchenginechooser.value == 'bing'){
         document.getElementById('searchbar').action = "https://bing.com/search";
       }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('imagechooser').addEventListener('change', function() {
+
+        var backgroundimage = document.querySelector("#main"),
+        file = document.querySelector("#imagechooser").files[0],
+        filereader = new FileReader();
+    
+      filereader.onloadend = function () {
+        backgroundimage.style.backgroundImage = "url(" + filereader.result + ")";
+        document.body.style.backgroundImage = "url(" + filereader.result + ")";
+        const bgbase64 = filereader.result.replace('data:', '').replace(/^.+,/, '');
+        localStorage.setItem('background', bgbase64);
+      };
+    
+      if (file) filereader.readAsDataURL(file);
+      else backgroundimage.style.backgroundImage = "";
+      })
+      var backgroundimage = document.querySelector("#main");
+      const bg = localStorage.getItem('background');
+      if ('null' != bg) {
+        backgroundimage.style.backgroundImage = `url(data:image/png;base64,${bg})`;
+        document.body.style.backgroundImage = `url(data:image/png;base64,${bg});`;
+      } 
+      });
+       
+
