@@ -128,10 +128,9 @@ body {
     align-items: center;
     justify-content: center;
 }
-@media(min-height: 500px){
+@media(max-height: 300px){
     .main{
-        background-size: fill;
-        background-position: auto;
+        height: 50px;
     }
 }
 @keyframes slide-bottom {

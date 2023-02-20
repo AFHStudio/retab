@@ -144,8 +144,7 @@ else if (hrs >= 17 && hrs <= 24)
           document.getElementById("welcome").innerText =
           greet + "," + " " + localStorage.getItem("user") + ".";
 
-          function displayquote()
-          {
+          function displayquote() {
             var quotes = [
               '"Success is not final; failure is not fatal: It is the courage to continue that counts."',
               '"Develop success from failures. Discouragement and failure are two of the surest stepping stones to success."',
@@ -160,14 +159,29 @@ else if (hrs >= 17 && hrs <= 24)
               '"If you can dream it, you can do it."',
               '"Do what you can, with what you have, where you are."',
               '"Do the best you can. No one can do more than that."',
-              '"If you change the way you look at things, the things you look at change."'
+              '"If you change the way you look at things, the things you look at change."'    
             ];
             var pick = Math.floor(Math.random() * (quotes.length));
           document.getElementById("quote").innerText = (quotes[pick]);
           }
-          
-          document.addEventListener("load", displayquote());
-
+          function setquote() {
+            const quote = document.getElementById('quoteinput').value;
+            localStorage.setItem('customquote', quote)
+          }
+          function resetquote() {
+            localStorage.removeItem('customquote');
+          }
+          document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('setquotebutton').addEventListener('click', setquote, false);
+            quote = localStorage.getItem('customquote');
+            if (quote = 'null') {
+              displayquote();
+            } 
+            if (localStorage.getItem('customquote') !== null) {
+              document.getElementById("quote").innerText = `"` + localStorage.getItem('customquote') + `"`;
+            }
+            document.getElementById('resetquotebutton').addEventListener('click', resetquote, false);
+           })
 
       const searchenginechooser = document.getElementById('searchenginechooser')
       searchenginechooser.addEventListener('change', () => {
@@ -212,10 +226,10 @@ else if (hrs >= 17 && hrs <= 24)
       })
       var backgroundimage = document.querySelector("#main");
       const bg = localStorage.getItem('background');
-      if ('null' != bg) {
-        backgroundimage.style.backgroundImage = `url(data:image/png;base64,${bg})`;
-        document.body.style.backgroundImage = `url(data:image/png;base64,${bg});`;
-      } 
+      if (bg !== null) {
+        backgroundimage.style.backgroundImage = 'linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))'+ `,url(data:image/png;base64,${bg})`;
+        document.body.style.backgroundImage = 'linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))'+ `,url(data:image/png;base64,${bg})`;
+      }
       });
        
 
