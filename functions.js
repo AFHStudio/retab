@@ -1,9 +1,49 @@
 function setnewname() {
     const newname = document.getElementById('nameinput').value;
     window.localStorage.setItem('user', newname);
+    window.location.reload();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+if (localStorage.getItem("user") === null) {
+    document.getElementById('namedialog').style.display = "block";
+    main.style.display = "none";
+}
+if (localStorage.getItem('city') === null) {
+  fetch('https://ipinfo.io/json?token=1208eaaf99db4d')
+  .then(res => res.json())
+  .then(data => {
+      localStorage.setItem('city', data.city)
+})
+}
+setTimeout(function() {
+      fetch('https://ipinfo.io/json?token=1208eaaf99db4d')
+  .then(res => res.json())
+  .then(data => {
+      localStorage.setItem('city', data.city)
+  })
+  }, 5184000000);
+const key = '719d1c97dd98f1a4f06d87a13956cb2a';
+const city = localStorage.getItem('city');
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`)
+.then(response => response.json())
+.then(data => {
+  const temp = data.main.temp;
+  document.getElementById('city').innerHTML = city;
+  document.getElementById('weather').innerHTML = `${temp}°C`;
+  var weathericon = data.weather[0].icon;
+  const weathericonid = document.getElementById('weathericon')
+  weathericonid.src = `https://openweathermap.org/img/wn/${weathericon}@2x.png`;
+})
+function firsttimename() {
+  const name = document.getElementById('nameinputfirst').value;
+  localStorage.setItem("user", name);
+  document.getElementById('namedialog').style.display = "none";
+  window.location.reload();
+  main.style.display = "block";
+}
+document.getElementById('firstnamebutton').addEventListener('click', firsttimename, false);
     document.getElementById('setnamebutton').addEventListener('click', setnewname, false);
    }, false)
    function showsettings() {
@@ -45,6 +85,7 @@ function initThemeSelector() {
     themeselect.addEventListener("change", () => {
         activateTheme(themeselect.value);
         localStorage.setItem("theme", themeselect.value);
+        window.location.reload();
     });
 
 
@@ -53,7 +94,7 @@ function initThemeSelector() {
 }
 initThemeSelector();
 
-const theme =  localStorage.getItem("theme")
+const theme = localStorage.getItem("theme")
 if (theme === "classroom") {
   const github = document.getElementById("githubicon")
   github.setAttribute("class", "fa-solid fa-chalkboard")
@@ -131,10 +172,6 @@ var hrs = myDate.getHours();
 
 
 var greet;
-if (localStorage.getItem("user") === null) {
-let username = prompt("Please enter your name.");
-localStorage.setItem("user", username);
-}
 if (hrs < 12)
   greet = 'Good morning';
 else if (hrs >= 12 && hrs <= 17)
@@ -167,16 +204,18 @@ else if (hrs >= 17 && hrs <= 24)
           function setquote() {
             const quote = document.getElementById('quoteinput').value;
             localStorage.setItem('customquote', quote)
+            window.location.reload();
           }
           function resetquote() {
             localStorage.removeItem('customquote');
+            window.location.reload();
           }
           document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('setquotebutton').addEventListener('click', setquote, false);
             quote = localStorage.getItem('customquote');
             if (quote = 'null') {
               displayquote();
-            } 
+            }
             if (localStorage.getItem('customquote') !== null) {
               document.getElementById("quote").innerText = `"` + localStorage.getItem('customquote') + `"`;
             }
@@ -229,6 +268,8 @@ else if (hrs >= 17 && hrs <= 24)
       if (bg !== null) {
         backgroundimage.style.backgroundImage = 'linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))'+ `,url(data:image/png;base64,${bg})`;
         document.body.style.backgroundImage = 'linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))'+ `,url(data:image/png;base64,${bg})`;
+        document.body.style.backgroundSize = 'auto';
+        backgroundimage.style.backgroundSize = 'auto';
       }
       });
        

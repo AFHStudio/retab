@@ -8,8 +8,16 @@
         <script src="a1ad0aaccb.js" defer></script>
         <script src="functions.js" defer></script>
         <link rel="icon" type="image/x-icon" href="favicon.png">
+        <meta charset="UTF-8">
     </head>
     <body>
+        <div class="namedialog" id="namedialog">
+            <h2>Welcome to Homepage Revamped!</h2>
+            <h1>What's your name?</h1>
+            <input type="text" id="nameinputfirst"/>
+            <hr></hr>
+            <input type="button" value="Continue" class="firstnamebutton" id="firstnamebutton"/>
+        </div>
         <div class="settingscontainer" id="settingscontainer">
             <button class="settingsbutton" id="settingsbutton1"><i class="fa-solid fa-x"></i></button>
             <h1>Settings</h1>
@@ -43,6 +51,11 @@
             <input type="button" value="Reset" class="resetquotebutton" id="resetquotebutton"/>
         </div>
         <section class="main" id="main">
+            <div id="weatherwidget">
+                <img src="" id="weathericon">
+                <div id="weather"></div>
+                <div id="city"></div>
+                </div>
             <button class="settingsbutton" id="settingsbutton2"><i class="fa-solid fa-gear"></i></button>
             <div class="datetime">
                 <div class="date"></div>
