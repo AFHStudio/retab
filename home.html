@@ -20,38 +20,55 @@
         </div>
         <div class="settingscontainer" id="settingscontainer">
             <button class="settingsbutton" id="settingsbutton1"><i class="fa-solid fa-x"></i></button>
-            <h1>Settings</h1>
-            <h3>Choose a theme:</h3>
-            <select id="themeselector" class="themeselector">
-                <option value="default">Default</option>
-                <option value="retro">Retro</option>
-                <option value="redshards">Red Black Shards</option>
-                <option value="blueshards">Blue Black Shards</option>
-                <option value="2basic4you">2basic4you</option>
-                <option value="classroom">Classroom/School</option>
-                <option value="space">Space</option>
-                <option value="animals">Animals</option>
-                <option value="nightfall">Nightfall</option>
-                <option value="aurora">Aurora</option>
-            </select>
-            <h3>Set a new name:</h3>
-            <input type="text" id="nameinput"/>
-            <input type="button" value="Set" class="setnamebutton" id="setnamebutton"/>
-            <h3>Change your search engine:</h3>
-            <select id="searchenginechooser">
-                <option value="google">Google</option>
-                <option value="duckduckgo">DuckDuckGo</option>
-                <option value="bravesearch">Brave Search</option>
-                <option value="ecosia">Ecosia</option>
-                <option value="bing">Bing</option>
-            </select>
-            <h3>Change your background:</h3>
-            <input type="file" accept="image/*" id="imagechooser" class="imagechooser">
-            <input type="button" value="Reset Background" class="resetbackgroundbutton" id="resetbackgroundbutton"/>
-            <h3>Set a custom quote:</h3>
-            <input type="text" id="quoteinput"/>
-            <input type="button" value="Set" class="setquotebutton" id="setquotebutton"/>
-            <input type="button" value="Reset" class="resetquotebutton" id="resetquotebutton"/>
+            <ul class="sidebar">
+                <h1><i class="fa-solid fa-gear"></i>Settings</h1>
+                <li id="general"><i class="fa-solid fa-house"></i>General</li>
+                <li id="appearance"><i class="fa-solid fa-paintbrush"></i>Appearance</li>
+                <li id="icons"><i class="fa-solid fa-font-awesome"></i>Custom Icons</li>
+                <li id="about"><i class="fa-solid fa-question"></i>About</li>
+                <li id="kofi"><i class="fa-solid fa-mug-saucer"></i>Ko-fi</li>
+              </ul>
+              <section id="generalsection">
+                <h3 id="newnametext">Set a new name:</h3>
+                <input type="text" id="nameinput"/>
+                <input type="button" value="Set" class="setnamebutton" id="setnamebutton"/>
+                <h3 id="searchenginetext">Change your search engine:</h3>
+                <select id="searchenginechooser">
+                    <option value="google">Google</option>
+                    <option value="duckduckgo">DuckDuckGo</option>
+                    <option value="bravesearch">Brave Search</option>
+                    <option value="ecosia">Ecosia</option>
+                    <option value="bing">Bing</option>
+                </select>
+                    <h3 id="customquotetext">Set a custom quote:</h3>
+                    <input type="text" id="quoteinput"/>
+                    <input type="button" value="Set" class="setquotebutton" id="setquotebutton"/>
+                    <input type="button" value="Reset" class="resetquotebutton" id="resetquotebutton"/>
+              </section>
+                <section id="appearancesection">
+                    <h3 id="themetext">Choose a theme:</h3>
+                    <select id="themeselector" class="themeselector">
+                        <option value="default">Default</option>
+                        <option value="retro">Retro</option>
+                        <option value="redshards">Red Black Shards</option>
+                        <option value="blueshards">Blue Black Shards</option>
+                        <option value="2basic4you">2basic4you</option>
+                        <option value="classroom">Classroom/School</option>
+                        <option value="space">Space</option>
+                        <option value="animals">Animals</option>
+                        <option value="nightfall">Nightfall</option>
+                        <option value="aurora">Aurora</option>
+                    </select>
+                    <h3 class="imagechoosertext" id="imagechoosertext">Change your background:</h3>
+                    <input type="file" accept="image/*" id="imagechooser" class="imagechooser">
+                    <input type="button" value="Reset Background" class="resetbackgroundbutton" id="resetbackgroundbutton"/>
+                </section>
+                <section id="aboutsection">
+                <h3 id="abouttext">About Homepage Revamped</h3>
+                <p id="version">v2.0.5 (03.10.2023)</p>
+                <p id="sourcetext"><a id="sourcelink" href=https://github.com/AFHStudio/homepage-revamped>View the source code</a> on GitHub</p>
+                <p id="madewithlove">Made with <i class="fa-solid fa-heart"></i> by the AFHStudio team</p>
+                </section>
         </div>
         <section class="main" id="main">
             <div id="weatherwidget">

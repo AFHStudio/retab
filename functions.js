@@ -68,6 +68,34 @@ document.addEventListener('DOMContentLoaded', function() {
  document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('resetbackgroundbutton').addEventListener('click', resetbg, false);
  }, false)   
+  document.getElementById('about').addEventListener('click', () => {
+    document.getElementById('generalsection').style.visibility = 'hidden';
+    document.getElementById('generalsection').style.display = 'none';
+    document.getElementById('appearancesection').style.visibility = 'hidden';
+    document.getElementById('appearancesection').style.display = 'none';
+    document.getElementById('aboutsection').style.visibility = 'visible';
+    document.getElementById('aboutsection').style.display = 'block';
+  })
+  document.getElementById('general').addEventListener('click', () => {
+    document.getElementById('generalsection').style.visibility = 'visible';
+    document.getElementById('generalsection').style.display = 'block';
+    document.getElementById('appearancesection').style.visibility = 'hidden';
+    document.getElementById('appearancesection').style.display = 'none';
+    document.getElementById('aboutsection').style.visibility = 'hidden';
+    document.getElementById('aboutsection').style.display = 'none';
+  })
+  document.getElementById('kofi').addEventListener('click', () => {
+    window.open('https://ko-fi.com/afhstudio')
+  })
+  document.getElementById('appearance').addEventListener('click', () => {
+    document.getElementById('generalsection').style.visibility = 'hidden';
+    document.getElementById('generalsection').style.display = 'none';
+    document.getElementById('appearancesection').style.visibility = 'visible';
+    document.getElementById('appearancesection').style.display = 'block';
+    document.getElementById('aboutsection').style.visibility = 'hidden';
+    document.getElementById('aboutsection').style.display = 'none';
+})
+  
 
 function resetbg(){
   localStorage.removeItem("background")
