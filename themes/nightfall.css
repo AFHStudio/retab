@@ -9,14 +9,14 @@
     margin: auto;
     text-align: left;
     padding-top: 100px;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nightfall,dark,night);
-    background-size: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nightfall,night);
+    background-size: auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 body {
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nightfall,dark,night);
-    background-size: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nightfall,night);
+    background-size: auto;
     background-repeat: no-repeat;
     height: 600px;
     background-attachment: fixed;
@@ -106,7 +106,7 @@ body {
     animation: fadeIn 2s;
     margin-top: 170px;
 }
-.fa-brands{
+#youtubeicon, #githubicon, #spotifyicon, #twittericon, #discordicon{
     font-size: 40px;
     color: rgb(255, 255, 255);
     padding: 20px 15px;
@@ -114,7 +114,7 @@ body {
     transition: transform .2s;
     text-align: center;
 }
-.fa-brands:hover{
+#youtubeicon:hover, #githubicon:hover, #spotifyicon:hover, #twittericon:hover, #discordicon:hover{
     color:rgb(179, 0, 255);
     transform: scale(1.5);
     text-shadow: 0 5px 15px rgb(128, 0, 255);
