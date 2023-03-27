@@ -3,7 +3,31 @@ function setnewname() {
     window.localStorage.setItem('user', newname);
     window.location.reload();
 }
-
+document.getElementById('resetyoutubebutton').addEventListener('click', resetyoutube, false);
+function resetyoutube(){
+  localStorage.removeItem('youtubeurl');
+  localStorage.removeItem('youtubeicon');
+}
+document.getElementById('resetgithubbutton').addEventListener('click', resetgithub, false);
+function resetgithub(){
+  localStorage.removeItem('githuburl');
+  localStorage.removeItem('githubicon');
+}
+document.getElementById('resetspotifybutton').addEventListener('click', resetspotify, false);
+function resetspotify(){
+  localStorage.removeItem('spotifyurl');
+  localStorage.removeItem('spotifyicon');
+}
+document.getElementById('resettwitterbutton').addEventListener('click', resettwitter, false);
+function resettwitter(){
+  localStorage.removeItem('twitterurl');
+  localStorage.removeItem('twittericon');
+}
+document.getElementById('resetdiscordbutton').addEventListener('click', resetdiscord, false);
+function resetdiscord(){
+  localStorage.removeItem('discordurl');
+  localStorage.removeItem('discordicon');
+}
 document.addEventListener('DOMContentLoaded', function() {
 if (localStorage.getItem("user") === null) {
     document.getElementById('namedialog').style.display = "block";
@@ -59,15 +83,96 @@ document.getElementById('firstnamebutton').addEventListener('click', firsttimena
     }
 }
 
+function checkcustomicons(){
+  if (localStorage.getItem('youtubeurl') && localStorage.getItem('youtubeicon') !== null){
+    const youtubelink = document.getElementById('youtube');
+    const youtubeicon = document.getElementById('youtubeicon');
+    youtubelink.href = localStorage.getItem('youtubeurl');
+    youtubeicon.className = localStorage.getItem('youtubeicon');
+  }
+  if (localStorage.getItem('githuburl') && localStorage.getItem('githubicon') !== null){
+    const githublink = document.getElementById('github');
+    const githubicon = document.getElementById('githubicon');
+    githublink.href = localStorage.getItem('githuburl');
+    githubicon.className = localStorage.getItem('githubicon');
+  }
+  if (localStorage.getItem('spotifyurl') && localStorage.getItem('spotifyicon') !== null){
+    const spotifylink = document.getElementById('spotify');
+    const spotifyicon = document.getElementById('spotifyicon');
+    spotifylink.href = localStorage.getItem('spotifyurl');
+    spotifyicon.className = localStorage.getItem('spotifyicon');
+  }
+  if (localStorage.getItem('twitterurl') && localStorage.getItem('twittericon') !== null){
+    const twitterlink = document.getElementById('twitter');
+    const twittericon = document.getElementById('twittericon');
+    twitterlink.href = localStorage.getItem('twitterurl');
+    twittericon.className = localStorage.getItem('twittericon');
+  }
+  if (localStorage.getItem('discordurl') && localStorage.getItem('discordicon') !== null){
+    const discordlink = document.getElementById('discord');
+    const discordicon = document.getElementById('discordicon');
+    discordlink.href = localStorage.getItem('discordurl');
+    discordicon.className = localStorage.getItem('discordicon');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('settingsbutton1').addEventListener('click', showsettings, false);
  }, false)
+ document.addEventListener('DOMContentLoaded', checkcustomicons, false)
  document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('settingsbutton2').addEventListener('click', showsettings, false);
  }, false)
  document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('resetbackgroundbutton').addEventListener('click', resetbg, false);
  }, false)   
+  document.getElementById('about').addEventListener('click', () => {
+    document.getElementById('generalsection').style.visibility = 'hidden';
+    document.getElementById('generalsection').style.display = 'none';
+    document.getElementById('appearancesection').style.visibility = 'hidden';
+    document.getElementById('appearancesection').style.display = 'none';
+    document.getElementById('aboutsection').style.visibility = 'visible';
+    document.getElementById('aboutsection').style.display = 'block';
+    document.getElementById('customiconssection').style.visibility = 'hidden';
+    document.getElementById('customiconssection').style.display = 'none';
+  })
+  document.getElementById('general').addEventListener('click', () => {
+    document.getElementById('generalsection').style.visibility = 'visible';
+    document.getElementById('generalsection').style.display = 'block';
+    document.getElementById('appearancesection').style.visibility = 'hidden';
+    document.getElementById('appearancesection').style.display = 'none';
+    document.getElementById('aboutsection').style.visibility = 'hidden';
+    document.getElementById('aboutsection').style.display = 'none';
+    document.getElementById('customiconssection').style.visibility = 'hidden';
+    document.getElementById('customiconssection').style.display = 'none';
+  })
+  document.getElementById('icons').addEventListener('click', () => {
+    document.getElementById('generalsection').style.visibility = 'hidden';
+    document.getElementById('generalsection').style.display = 'none';
+    document.getElementById('appearancesection').style.visibility = 'hidden';
+    document.getElementById('appearancesection').style.display = 'none';
+    document.getElementById('aboutsection').style.visibility = 'hidden';
+    document.getElementById('aboutsection').style.display = 'none';
+    document.getElementById('customiconssection').style.visibility = 'visible';
+    document.getElementById('customiconssection').style.display = 'block';
+  })
+  document.getElementById('kofi').addEventListener('click', () => {
+    window.open('https://ko-fi.com/afhstudio')
+  })
+  document.getElementById('afhstudio').addEventListener('click', () => {
+    window.open('https://afhstudio.ml')
+  })
+  document.getElementById('appearance').addEventListener('click', () => {
+    document.getElementById('generalsection').style.visibility = 'hidden';
+    document.getElementById('generalsection').style.display = 'none';
+    document.getElementById('appearancesection').style.visibility = 'visible';
+    document.getElementById('appearancesection').style.display = 'block';
+    document.getElementById('aboutsection').style.visibility = 'hidden';
+    document.getElementById('aboutsection').style.display = 'none';
+    document.getElementById('customiconssection').style.visibility = 'hidden';
+    document.getElementById('customiconssection').style.display = 'none';
+})
+  
 
 function resetbg(){
   localStorage.removeItem("background")
@@ -254,8 +359,8 @@ else if (hrs >= 17 && hrs <= 24)
         filereader = new FileReader();
     
       filereader.onloadend = function () {
-        backgroundimage.style.backgroundImage = "url(" + filereader.result + ")";
-        document.body.style.backgroundImage = "url(" + filereader.result + ")";
+        backgroundimage.style.backgroundImage = 'linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))'+",url(" + filereader.result + ")";
+        document.body.style.backgroundImage = 'linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))'+",url(" + filereader.result + ")";
         const bgbase64 = filereader.result.replace('data:', '').replace(/^.+,/, '');
         localStorage.setItem('background', bgbase64);
       };
@@ -268,9 +373,175 @@ else if (hrs >= 17 && hrs <= 24)
       if (bg !== null) {
         backgroundimage.style.backgroundImage = 'linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))'+ `,url(data:image/png;base64,${bg})`;
         document.body.style.backgroundImage = 'linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))'+ `,url(data:image/png;base64,${bg})`;
-        document.body.style.backgroundSize = 'auto';
-        backgroundimage.style.backgroundSize = 'auto';
+        document.body.style.backgroundSize = '100%';
+        backgroundimage.style.backgroundSize = '100%';
       }
-      });
-       
+      const settingsconsolemenu = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "KeyS", "KeyM"];
+      let currentkeys = [];
 
+        document.addEventListener("keydown", function(event) {
+          currentkeys.push(event.code);
+          if (currentkeys.length > settingsconsolemenu.length) {
+            currentkeys.shift();
+          }
+          if (JSON.stringify(currentkeys) === JSON.stringify(settingsconsolemenu)) {
+            document.getElementById('smtext').style.display = 'block';
+            document.getElementById('iaprimebutton').style.display = 'block';
+            document.getElementById('ccbutton').style.display = 'block';
+            document.getElementById('ccbutton').addEventListener('click', () => {
+              var ccwindow = window.open()
+              ccwindow.document.write(`<html lang="en" dir="ltr"><head><meta charset="utf-8"><title>CC</title><style>@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+              .cc{
+                  padding: 10px;
+                  border-radius: 1em;
+                  height: 380px;
+                  width: 400px;
+                  margin: auto;
+                  background-color: #0C0C0C;
+                  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+                  margin-top: 150px;
+              }
+              .display-box {
+                  font-family: 'Rubik', sans-serif;
+                  background-color: #191919;
+                  border: solid #00e06c 0.5px;
+                  color: #00e06c;
+                  font-size: 35px;
+                  border-radius: 5px;
+                  width: 100%;
+                  height: 65%;
+              }
+              #btn {
+                  background-color: #f;
+              }
+              input[type=button] {
+                  font-family: 'Rubik', sans-serif;
+                  background-color: #00e06c;
+                  color: white;
+                  border: solid black 0.5px;
+                  width: 100%;
+                  border-radius: 5px;
+                  height: 70%;
+                  outline: none;
+              }
+              input:active[type=button] {
+                  background: #191919;
+                  box-shadow: inset 0px 0px 5px #c1c1c1;
+              }
+              input:hover[type=button] {
+                background: #191919;
+                box-shadow: inset 0px 0px 5px #c1c1c1;
+                cursor: pointer;
+              }
+              body{
+                background-color: #191919;
+              }
+            }</style><script>
+            function clearscreen() {
+                document.getElementById("result").value = "";
+            }
+            function display(value) {
+                document.getElementById("result").value += value;
+            }
+            function cc() {
+                var p = document.getElementById("result").value;
+                var q = eval(p);
+                document.getElementById("result").value = q;
+            }
+            function rm() {
+              window.close()
+            }</script></head><body><table class="cc"><tr><td colspan="3"><input class="display-box" type="text" id="result" disabled /></td><td><input type="button" value="RM" onclick="rm()" id="btn"/><input type="button" value="C" onclick="clearscreen()" id="btn" /></td></tr><tr><td><input type="button" value="1" onclick="display('1')" /></td><td><input type="button" value="2" onclick="display('2')" /></td><td><input type="button" value="3" onclick="display('3')" /></td><td><input type="button" value="/" onclick="display('/')" /></td></tr><tr><td><input type="button" value="4" onclick="display('4')" /></td><td><input type="button" value="5" onclick="display('5')" /></td><td><input type="button" value="6" onclick="display('6')" /></td><td><input type="button" value="-" onclick="display('-')" /></td></tr><tr><td><input type="button" value="7" onclick="display('7')" /></td><td><input type="button" value="8" onclick="display('8')" /></td><td><input type="button" value="9" onclick="display('9')" /></td><td><input type="button" value="+" onclick="display('+')" /></td></tr><tr><td><input type="button" value="." onclick="display('.')" /></td><td><input type="button" value="0" onclick="display('0')" /></td><td><input type="button" value="=" onclick="cc()" id="btn" /></td><td><input type="button" value="*" onclick="display('*')" /></td></tr></table><script type="text/javascript" src="script.js"></script></body>`)
+          })
+          }
+          document.getElementById('iaprimebutton').addEventListener('click', () => {
+            window.open().document.write(`<iframe src="https://oliver-chatgpt-demo-nbxdfevjf-oujianlin1990-gmailcom.vercel.app/" width=1920 height=720></iframe>`)
+          })
+});
+const youtubeurlinput = document.getElementById('youtubeurlinput');
+const youtubeiconinput = document.getElementById('youtubeiconinput');
+const youtubelink = document.getElementById('youtube');
+const youtubeicon = document.getElementById('youtubeicon');
+
+document.getElementById('setyoutubebutton').addEventListener('click', () => {
+if (youtubeurlinput.value.trim() !== '' && youtubeiconinput.value.trim() !== '') {
+localStorage.setItem('youtubeurl', youtubeurlinput.value.trim());
+localStorage.setItem('youtubeicon', youtubeiconinput.value.trim());
+
+youtubelink.href = localStorage.getItem('youtubeurl');
+
+youtubeicon.className = localStorage.getItem('youtubeicon');
+} else {
+alert('Please fill in both fields before setting the icon and link.');
+}
+});
+const githuburlinput = document.getElementById('githuburlinput');
+const githubiconinput = document.getElementById('githubiconinput');
+const githublink = document.getElementById('github');
+const githubicon = document.getElementById('githubicon');
+
+document.getElementById('setgithubbutton').addEventListener('click', () => {
+if (youtubeurlinput.value.trim() !== '' && githubiconinput.value.trim() !== '') {
+localStorage.setItem('githuburl', githuburlinput.value.trim());
+localStorage.setItem('githubicon', githubiconinput.value.trim());
+
+githublink.href = localStorage.getItem('githuburl');
+
+githubicon.className = localStorage.getItem('githubicon');
+} else {
+alert('Please fill in both fields before setting the icon and link.');
+}
+});
+
+const spotifyurlinput = document.getElementById('spotifyurlinput');
+const spotifyiconinput = document.getElementById('spotifyiconinput');
+const spotifylink = document.getElementById('spotify');
+const spotifyicon = document.getElementById('spotifyicon');
+
+document.getElementById('setspotifybutton').addEventListener('click', () => {
+if (spotifyurlinput.value.trim() !== '' && spotifyconinput.value.trim() !== '') {
+localStorage.setItem('spotifyurl', spotifyurlinput.value.trim());
+localStorage.setItem('spotifyicon', spotifyiconinput.value.trim());
+
+spotifylink.href = localStorage.getItem('spotifyurl');
+
+spotifyicon.className = localStorage.getItem('spotifyicon');
+} else {
+alert('Please fill in both fields before setting the icon and link.');
+}
+});
+const twitterurlinput = document.getElementById('twitterurlinput');
+const twittericoninput = document.getElementById('twittericoninput');
+const twitterlink = document.getElementById('twitter');
+const twittericon = document.getElementById('twittericon');
+
+document.getElementById('settwitterbutton').addEventListener('click', () => {
+if (twitterurlinput.value.trim() !== '' && twitterconinput.value.trim() !== '') {
+localStorage.setItem('twitterurl', twitterurlinput.value.trim());
+localStorage.setItem('twittericon', twittericoninput.value.trim());
+
+twitterlink.href = localStorage.getItem('twitterurl');
+
+twittericon.className = localStorage.getItem('twittericon');
+} else {
+alert('Please fill in both fields before setting the icon and link.');
+}
+});
+const discordurlinput = document.getElementById('discordurlinput');
+const discordiconinput = document.getElementById('discordiconinput');
+const discordlink = document.getElementById('discord');
+const discordicon = document.getElementById('discordicon');
+
+document.getElementById('setdiscordbutton').addEventListener('click', () => {
+if (discordurlinput.value.trim() !== '' && discordconinput.value.trim() !== '') {
+localStorage.setItem('discordurl', discordurlinput.value.trim());
+localStorage.setItem('discordicon', discordiconinput.value.trim());
+
+discordlink.href = localStorage.getItem('discordurl');
+
+discordicon.className = localStorage.getItem('discordicon');
+} else {
+alert('Please fill in both fields before setting the icon and link.');
+}
+});
+       
+      })
