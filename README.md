@@ -4,12 +4,3 @@
 ### Docs: https://docs.afhstudio.ml
 [![Get on Firefox](https://extensionworkshop.com/assets/img/documentation/publish/get-the-addon-178x60px.dad84b42.png)](https://addons.mozilla.org/en-US/firefox/addon/homepage-revamped/)
 [![Get on Chrome](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png)](https://bit.ly/hrnewtab)
-## How to install
-### Go to chrome://extensions.
-### Enable Developer Mode by flicking this button.
-![developer mode](https://i.imgur.com/YBm1UiD.png)
-### Download the ZIP file from the "Releases" tab and unzip it.
-### Go back to the chrome://extensions page and click "Load unpacked".
-![unpacked](https://i.imgur.com/b0g1W1s.png)
-### Open the folder with the extension files. You should be all good to go!
-![loaded](https://i.imgur.com/qjtgi4j.png)
