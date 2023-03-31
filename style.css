@@ -251,6 +251,11 @@
 #sourcelink{
     color: #FFF;
 }
+#aboutsection hr{
+    width: 500px;
+    margin-left: 250px;
+    margin-top: 20px;
+}
 
 
 
@@ -338,12 +343,12 @@
     white-space: nowrap;
     float: right;
     margin-top: 15px;
-    font-size: 19px;
+    font-size: 17px;
     margin-right: 20px;
 }
 #weatherwidget #city{
     font-size: 15px;
-    margin-left: 40px;
+    margin-left: 50px;
     margin-bottom: 5px;
 }
 #smtext{

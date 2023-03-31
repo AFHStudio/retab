@@ -1,23 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
 *{
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
 }
 .main{
-    width: 100%;
     height: 600px;
     margin: auto;
     text-align: left;
     padding-top: 100px;
-    background-image: url(greenshards.jpeg);
-    background-size: auto;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWJlNmIwYzRiNDc1OTAwMWRmNDYzOGU0ZDEwN2RmMjY0YTUzNWExNCZjdD1n/ubyFR0Ykyv5u0/giphy.gif);
+    background-size: 100%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 body {
-    background-image: url(greenshards.jpeg);
-    background-size: auto;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWJlNmIwYzRiNDc1OTAwMWRmNDYzOGU0ZDEwN2RmMjY0YTUzNWExNCZjdD1n/ubyFR0Ykyv5u0/giphy.gif);
+    background-size: 100%;
     background-repeat: no-repeat;
+    height: 600px;
+    background-attachment: fixed;
 }
 .main h1{
     font-size: 35px;
@@ -90,13 +92,12 @@ body {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    background: rgb(0, 255, 64);
+    background: rgb(249, 213, 9);
     cursor: pointer;
     transition: transform .2s;
 }
 .searchbar button:hover{
     transform: scale(1.5);
-    box-shadow: 0 5px 15px rgb(13, 255, 0);
 }
 .main .quote{
     color: rgba(255,255,255);
@@ -114,9 +115,9 @@ body {
     text-align: center;
 }
 #youtubeicon:hover, #githubicon:hover, #spotifyicon:hover, #twittericon:hover, #discordicon:hover{
-    color:rgb(0, 255, 110);
-    text-shadow: 0 5px 15px rgb(21, 255, 0);
+    color:rgb(255, 218, 9);
     transform: scale(1.5);
+    text-shadow: 0 5px 15px rgb(255, 196, 0);
 }
 .quicklinks{
     text-align: center;
@@ -128,9 +129,9 @@ body {
     align-items: center;
     justify-content: center;
 }
-@media(max-height: 700px){
+@media(max-height: 300px){
     .main{
-        height: 600px;
+        height: 50px;
     }
 }
 @keyframes slide-bottom {
