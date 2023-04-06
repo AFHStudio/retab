@@ -382,4 +382,16 @@
 #iaprimebutton:hover{
     cursor: pointer;
 }
+.quicklinks .fa-solid{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    padding: 20px 15px;
+    animation: fadeIn 2s;
+    transition: transform .2s;
+    text-align: center;
+}
+.quicklinks .fa-solid:hover{
+    color:rgb(255, 0, 0);
+    transform: scale(1.5);
+}
 
