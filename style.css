@@ -134,6 +134,36 @@
 .settingscontainer p a{
     color: white;
 }
+.searchbar{
+    width: 30%;
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 1px 5px;
+    margin-top: 40px;
+    color: #FFF;
+    animation: fadeIn 2s;
+}
+.searchbar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 9px 10px;
+    font-size: 20px;
+    color: #FFF;
+}
+::placeholder{
+    color: rgba(255, 255, 255, 0.545);
+}
+.searchbar button i{
+    width: 25px;
+    color: rgb(255, 255, 255);
+}
+.searchbar button:hover{
+    transform: scale(1.5);
+}
 .settingscontainer #customyoutube, #customgithub, #customspotify, #customtwitter, #customdiscord{
     font-size: 25px;
     display: flex;
@@ -333,7 +363,6 @@
     float: left; 
     margin-top: -90px;
     color: white;
-    background-color: #0705057a;
     border-radius: 5px;
     margin-left: 30px;
     width: 130px;
@@ -394,4 +423,21 @@
     color:rgb(255, 0, 0);
     transform: scale(1.5);
 }
-
+hr{
+    width: 30%;
+    margin: auto;
+}
+input{
+    margin: auto;
+}
+.fontselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}

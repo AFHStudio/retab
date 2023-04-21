@@ -59,45 +59,14 @@ body {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
-.searchbar{
-    width: 100%;
-    max-width: 700px;
-    background: rgba(145, 145, 145, 0.536);
-    display: flex;
-    align-items: center;
-    border-radius: 60px;
-    padding: 1px 20px;
-    margin-top: 40px;
-    color: #FFF;
-    animation: fadeIn 2s;
-}
-.searchbar input{
-    background: transparent;
-    flex: 1;
-    border: 0;
-    outline: none;
-    padding: 24px 20px;
-    font-size: 20px;
-    color: #FFF;
-}
-::placeholder{
-    color: rgba(255, 255, 255, 0.545);
-}
-.searchbar button i{
-    width: 25px;
-    color: rgb(255, 255, 255);
-}
 .searchbar button{
     border: 0;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    background: rgb(70, 166, 255);
+    background: rgb(255, 8, 8);
     cursor: pointer;
     transition: transform .2s;
-}
-.searchbar button:hover{
-    transform: scale(1.5);
 }
 .main .quote{
     color: rgba(255,255,255);

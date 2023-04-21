@@ -5,6 +5,7 @@
         <title>New Tab</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" id="themestylesheet" href="themes/default.css">
+        <link rel="stylesheet" id="fontstylesheet" href="fonts/inter.css">
         <script src="a1ad0aaccb.js" defer></script>
         <script src="functions.js" defer></script>
         <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -69,6 +70,20 @@
                     <h3 class="imagechoosertext" id="imagechoosertext">Change your background:</h3>
                     <input type="file" accept="image/*" id="imagechooser" class="imagechooser">
                     <input type="button" value="Reset Background" class="resetbackgroundbutton" id="resetbackgroundbutton"/>
+                    <h3>Choose a font:</h3>
+                    <select id="fontselector" class="fontselector">
+                        <option value="inter">Inter (Default)</option>
+                        <option value="retro">Press Start 2P (Retro)</option>
+                        <option value="rubik">Rubik (Nord)</option>
+                        <option value="roboto">Roboto</option>
+                        <option value="ubuntu">Ubuntu</option>
+                        <option value="montserrat">Montserrat</option>
+                        <option value="sourcecodepro">Source Code Pro</option>
+                        <option value="poppins">Poppins</option>
+                        <option value="merriweather">Merriweather</option>
+                        <option value="oswald">Oswald</option>
+                        <option value="notoserif">Noto Serif</option>
+                    </select>
                 </section>
                 <section id="customiconssection">
                 <h3 id="customicontext">Change the icons on your homepage (FOR EXPERIENCED USERS ONLY)</h3>
@@ -81,7 +96,7 @@
                 </section>
                 <section id="aboutsection">
                 <h3 id="abouttext">About Homepage Revamped</h3>
-                <p id="version">v2.0.8 (04.06.2023)</p>
+                <p id="version">v2.0.9 (04.20.2023)</p>
                 <p id="sourcetext"><a id="sourcelink" href=https://github.com/AFHStudio/homepage-revamped>View the source code</a> on GitHub</p>
                 <p id="madewithlove">Made with <i class="fa-solid fa-heart"></i> by the AFHStudio team</p>            
                 </section>
@@ -97,6 +112,7 @@
                 <div class="date"></div>
                 <div class="time"></div>
             </div>
+            <h1 id="welcome"></h1>
             <div class="quicklinks">
                 <a id="youtube" href="https://youtube.com/"><i id="youtubeicon" class="fa-brands fa-youtube"></i></a>
                 <a id="github" href="https://github.com/"><i id="githubicon" class="fa-brands fa-github"></i></a>
@@ -104,13 +120,13 @@
                 <a id="twitter" href="https://twitter.com/"><i id="twittericon" class="fa-brands fa-twitter"></i></a>
                 <a id="discord" href="https://discord.com/channels/@me"><i id="discordicon" class="fa-brands fa-discord"></i></a>
                 </div>
-            <h1 id="welcome"></h1>
-            <div class="search">
-                <form action="https://google.com/search" method="get" class="searchbar" id="searchbar">
-                    <input type="text" placeholder="search the web" name="q">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </div>
+                <div class="search">
+                    <form action="https://google.com/search" method="get" class="searchbar" id="searchbar">
+                        <input type="text" placeholder="search the web" name="q">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                <hr>
             <p class="quote" id="quote"></p>
         </section>
         </div>
