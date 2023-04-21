@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Tab</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" id="themestylesheet" href="themes/default.css">
+        <link rel="stylesheet" id="fontstylesheet" href="fonts/inter.css">
+        <script src="a1ad0aaccb.js" defer></script>
+        <script src="functions.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="namedialog" id="namedialog">
+            <h2>Welcome to Homepage Revamped!</h2>
+            <h1>What's your name?</h1>
+            <input type="text" id="nameinputfirst"/>
+            <hr></hr>
+            <input type="button" value="Continue" class="firstnamebutton" id="firstnamebutton"/>
+        </div>
+        <div class="settingscontainer" id="settingscontainer">
+            <button class="settingsbutton" id="settingsbutton1"><i class="fa-solid fa-x"></i></button>
+            <ul class="sidebar">
+                <h1><i class="fa-solid fa-gear"></i>Settings</h1>
+                <li id="general"><i class="fa-solid fa-house"></i>General</li>
+                <li id="appearance"><i class="fa-solid fa-paintbrush"></i>Appearance</li>
+                <li id="icons"><i class="fa-solid fa-font-awesome"></i>Custom Icons</li>
+                <li id="about"><i class="fa-solid fa-question"></i>About</li>
+                <li id="afhstudio"><i class="fa-solid fa-globe"></i>Visit AFHStudio</li>
+                <li id="kofi"><i class="fa-solid fa-mug-saucer"></i>Ko-fi</li>
+              </ul>
+              <section id="generalsection">
+                <h3 id="newnametext">Set a new name:</h3>
+                <input type="text" id="nameinput" placeholder='Name'/>
+                <input type="button" value="Set" class="setnamebutton" id="setnamebutton"/>
+                <h3 id="searchenginetext">Change your search engine:</h3>
+                <select id="searchenginechooser">
+                    <option value="google">Google</option>
+                    <option value="duckduckgo">DuckDuckGo</option>
+                    <option value="bravesearch">Brave Search</option>
+                    <option value="ecosia">Ecosia</option>
+                    <option value="bing">Bing</option>
+                </select>
+                    <h3 id="customquotetext">Set a custom quote:</h3>
+                    <input type="text" id="quoteinput" placeholder='Quote'/>
+                    <input type="button" value="Set" class="setquotebutton" id="setquotebutton"/>
+                    <input type="button" value="Reset" class="resetquotebutton" id="resetquotebutton"/>
+              </section>
+              
+                <section id="appearancesection">
+                    <h3 id="themetext">Choose a theme:</h3>
+                    <select id="themeselector" class="themeselector">
+                        <option value="default">Default</option>
+                        <option value="retro">Retro</option>
+                        <option value="redshards">Red Black Shards</option>
+                        <option value="blueshards">Blue Black Shards</option>
+                        <option value="greenshards">Green Black Shards</option>
+                        <option value="2basic4you">2basic4you</option>
+                        <option value="classroom">Classroom/School</option>
+                        <option value="space">Space</option>
+                        <option value="animals">Animals</option>
+                        <option value="nightfall">Nightfall</option>
+                        <option value="aurora">Aurora</option>
+                        <option value="ocean">Ocean</option>
+                        <option value="nord">Nord</option>
+                        <option value="rat">Rach (Rat x Zach)</option>
+                        <option value="mushroom">Mushroom</option>
+                    </select>
+                    <h3 class="imagechoosertext" id="imagechoosertext">Change your background:</h3>
+                    <input type="file" accept="image/*" id="imagechooser" class="imagechooser">
+                    <input type="button" value="Reset Background" class="resetbackgroundbutton" id="resetbackgroundbutton"/>
+                    <h3>Choose a font:</h3>
+                    <select id="fontselector" class="fontselector">
+                        <option value="inter">Inter (Default)</option>
+                        <option value="retro">Press Start 2P (Retro)</option>
+                        <option value="rubik">Rubik (Nord)</option>
+                        <option value="roboto">Roboto</option>
+                        <option value="ubuntu">Ubuntu</option>
+                        <option value="montserrat">Montserrat</option>
+                        <option value="sourcecodepro">Source Code Pro</option>
+                        <option value="poppins">Poppins</option>
+                        <option value="merriweather">Merriweather</option>
+                        <option value="oswald">Oswald</option>
+                        <option value="notoserif">Noto Serif</option>
+                    </select>
+                </section>
+                <section id="customiconssection">
+                <h3 id="customicontext">Change the icons on your homepage (FOR EXPERIENCED USERS ONLY)</h3>
+                <p>Get icons from <a href='https://fontawesome.com'>Font Awesome and copy the text in the class="copythispart". Only fa-solid and fa-brands work for now.</a></p>
+                <i id="customyoutube" class="fa-brands fa-youtube"></i></a><input type="text" id="youtubeurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="youtubeiconinput"><input type="button" value="Set" class="setyoutubebutton" id="setyoutubebutton"/><input type="button" value="Reset" class="resetyoutubebutton" id="resetyoutubebutton"/>
+                <i id="customgithub" class="fa-brands fa-github"></i></a><input type="text" id="githuburlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="githubiconinput"><input type="button" value="Set" class="setgithubbutton" id="setgithubbutton"/><input type="button" value="Reset" class="resetgithubbutton" id="resetgithubbutton"/>
+                <i id="customspotify" class="fa-brands fa-spotify"></i></a><input type="text" id="spotifyurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="spotifyiconinput"><input type="button" value="Set" class="setspotifybutton" id="setspotifybutton"/><input type="button" value="Reset" class="resetspotifybutton" id="resetspotifybutton"/>
+                <i id="customtwitter" class="fa-brands fa-twitter"></i></a><input type="text" id="twitterurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="twittericoninput"><input type="button" value="Set" class="setdiscordbutton" id="settwitterbutton"/><input type="button" value="Reset" class="resettwitterbutton" id="resettwitterbutton"/>
+                <i id="customdiscord" class="fa-brands fa-discord"></i></a><input type="text" id="discordurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="discordiconinput"><input type="button" value="Set" class="setdiscordbutton" id="setdiscordbutton"/><input type="button" value="Reset" class="resetdiscordbutton" id="resetdiscordbutton"/>
+                </section>
+                <section id="aboutsection">
+                <h3 id="abouttext">About Homepage Revamped</h3>
+                <p id="version">v2.0.9 (04.20.2023)</p>
+                <p id="sourcetext"><a id="sourcelink" href=https://github.com/AFHStudio/homepage-revamped>View the source code</a> on GitHub</p>
+                <p id="madewithlove">Made with <i class="fa-solid fa-heart"></i> by the AFHStudio team</p>            
+                </section>
+        </div>
+        <section class="main" id="main">
+            <div id="weatherwidget">
+                <img src="" id="weathericon">
+                <div id="weather"></div>
+                <div id="city"></div>
+                </div>
+            <button class="settingsbutton" id="settingsbutton2"><i class="fa-solid fa-gear"></i></button>
+            <div class="datetime">
+                <div class="date"></div>
+                <div class="time"></div>
+            </div>
+            <h1 id="welcome"></h1>
+            <div class="quicklinks">
+                <a id="youtube" href="https://youtube.com/"><i id="youtubeicon" class="fa-brands fa-youtube"></i></a>
+                <a id="github" href="https://github.com/"><i id="githubicon" class="fa-brands fa-github"></i></a>
+                <a id="spotify" href="https://open.spotify.com"><i id="spotifyicon" class="fa-brands fa-spotify"></i></a>
+                <a id="twitter" href="https://twitter.com/"><i id="twittericon" class="fa-brands fa-twitter"></i></a>
+                <a id="discord" href="https://discord.com/channels/@me"><i id="discordicon" class="fa-brands fa-discord"></i></a>
+                </div>
+                <div class="search">
+                    <form action="https://google.com/search" method="get" class="searchbar" id="searchbar">
+                        <input type="text" placeholder="search the web" name="q">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                <hr>
+            <p class="quote" id="quote"></p>
+        </section>
+        </div>
+    </body>
+</html>

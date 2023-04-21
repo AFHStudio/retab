@@ -464,3 +464,24 @@ alert('Please fill in both fields before setting the icon and link.');
 });
        
       })
+
+function initFontSelector() {
+        const fontselect = document.getElementById("fontselector");
+        const fontstylesheetlink = document.getElementById("fontstylesheet");
+        const currentfont = localStorage.getItem("font") || "inter";
+    
+        function activateFont(fontname) {
+            fontstylesheetlink.setAttribute("href", `fonts/${fontname}.css`);
+        }
+    
+        fontselect.addEventListener("change", () => {
+            activateFont(fontselect.value);
+            localStorage.setItem("font", fontselect.value);
+            window.location.reload();
+        });
+    
+    
+        fontselect.value = currentfont;
+        activateFont(currentfont);
+    }
+    initFontSelector();
