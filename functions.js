@@ -47,7 +47,7 @@ setTimeout(function() {
       localStorage.setItem('city', data.city)
   })
   }, 5184000000);
-const key = '719d1c97dd98f1a4f06d87a13956cb2a';
+const key = 'putyourkeyhere';
 const city = localStorage.getItem('city');
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`)
