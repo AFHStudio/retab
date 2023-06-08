@@ -45,12 +45,14 @@ setTimeout(function() {
   .then(res => res.json())
   .then(data => {
       localStorage.setItem('city', data.city)
+      localStorage.setItem('region', data.region)
+      localStorage.setItem('country', data.country)
   })
   }, 5184000000);
 const key = '719d1c97dd98f1a4f06d87a13956cb2a';
 const city = localStorage.getItem('city');
 
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},{region},{country}&appid=${key}&units=metric`)
 .then(response => response.json())
 .then(data => {
   const temp = data.main.temp;
