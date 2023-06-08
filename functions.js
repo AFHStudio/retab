@@ -51,6 +51,8 @@ setTimeout(function() {
   }, 5184000000);
 const key = '719d1c97dd98f1a4f06d87a13956cb2a';
 const city = localStorage.getItem('city');
+const region = localStorage.getItem('region');
+const country = localStorage.getItem('country');
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},{region},{country}&appid=${key}&units=metric`)
 .then(response => response.json())
