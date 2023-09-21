@@ -47,7 +47,7 @@ setTimeout(function() {
       localStorage.setItem('city', data.city)
   })
   }, 5184000000);
-const key = 'putyourkeyhere';
+const key = '719d1c97dd98f1a4f06d87a13956cb2a';
 const city = localStorage.getItem('city');
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`)
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.open('https://ko-fi.com/afhstudio')
   })
   document.getElementById('afhstudio').addEventListener('click', () => {
-    window.open('https://afhstudio.ml')
+    window.open('https://afhstudio.link')
   })
   document.getElementById('appearance').addEventListener('click', () => {
     document.getElementById('generalsection').style.visibility = 'hidden';
@@ -301,7 +301,8 @@ else if (hrs >= 17 && hrs <= 24)
               '"If you can dream it, you can do it."',
               '"Do what you can, with what you have, where you are."',
               '"Do the best you can. No one can do more than that."',
-              '"If you change the way you look at things, the things you look at change."'    
+              '"If you change the way you look at things, the things you look at change."',
+              '"Never back down, never give up"' 
             ];
             var pick = Math.floor(Math.random() * (quotes.length));
           document.getElementById("quote").innerText = (quotes[pick]);
