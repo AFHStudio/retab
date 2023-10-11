@@ -31,7 +31,7 @@
     padding-top: 20px;
 }
 .settingscontainer{
-    background-color: rgb(18, 18, 18);
+    background-color: rgba(18, 18, 18, 0.548);
     width: 100%;
     height: 800px;
     display: none;
@@ -224,32 +224,42 @@
     padding: 5px 90px;
     color: #FFF;
 }
+@keyframes slide-right {
+    0% {
+              transform: translateX(0);
+    }
+    100% {
+              transform: translateX(200px);
+    }
+  }
+  
 .settingscontainer .sidebar{
     list-style-type: none;
-    width: 15%;
+    width: 13%;
     height: 100%;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: -200px;
     z-index: 0;
-    background-color: rgb(25, 25, 25);
-    animation: fadeIn 0.5s;
+    background-color: rgba(0, 0, 0, 0.298);
+    animation: slide-right 0.7s ease-in both;
 }
   
 .settingscontainer .sidebar li{
-    background-color: rgb(30, 30, 30);
-    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.724);
+    padding: 0.9em;
     color: #fff;
     width: auto;
     margin-bottom: 15px;
+    border-radius: 5px;
 }
 .settingscontainer .sidebar .fa-solid{
     margin-right: 20px;
 }
 .settingscontainer .sidebar li:hover{
-    background-color: #323232;
+    background-color: #ff3737c4;
     cursor: pointer;
 }
 .settingscontainer .sidebar h1{
