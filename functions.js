@@ -486,3 +486,46 @@ function initFontSelector() {
         activateFont(currentfont);
     }
     initFontSelector();
+
+    function initBGThemeSelector() {
+      const bgselect = document.getElementById("bgthemeselector");
+      const bgstylesheetlink = document.getElementById("bgstylesheet");
+      const currentbgtheme = localStorage.getItem("backgroundtheme") || "nature";
+  
+      function activateBGTheme(bgthemename) {
+          bgstylesheetlink.setAttribute("href", `themes/background/${bgthemename}.css`);
+      }
+  
+      bgselect.addEventListener("change", () => {
+          activateBGTheme(bgselect.value);
+          localStorage.setItem("backgroundtheme", bgselect.value);
+          window.location.reload();
+      });
+  
+  
+      bgselect.value = currentbgtheme;
+      activateBGTheme(currentbgtheme);
+  }
+  initBGThemeSelector();
+
+  function initOldSearchSelector() {
+    const searchselect = document.getElementById("oldsearchselector");
+    const searchstylesheetlink = document.getElementById("oldsearchstylesheet");
+    const currentsearchtheme = localStorage.getItem("oldsearch") || "off";
+
+    function activateSearchTheme(searchthemename) {
+        searchstylesheetlink.setAttribute("href", `themes/searchbar/${searchthemename}.css`);
+    }
+
+    searchselect.addEventListener("change", () => {
+        activateSearchTheme(searchselect.value);
+        localStorage.setItem("oldsearch", searchselect.value);
+        window.location.reload();
+    });
+
+
+    searchselect.value = currentsearchtheme;
+    activateSearchTheme(currentsearchtheme);
+}
+initOldSearchSelector();
+

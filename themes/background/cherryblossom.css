@@ -1,0 +1,12 @@
+.main{
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('https://source.unsplash.com/random/1920x1080/?cherry blossom');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body {
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('https://source.unsplash.com/random/1920x1080/?cherry blossom');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

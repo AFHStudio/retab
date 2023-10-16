@@ -1,0 +1,13 @@
+.main{
+    margin: auto;
+    text-align: left;
+    padding-top: 100px;
+    background-image: url(../redshards.jpeg);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+body {
+    background-image: url(../redshards.jpeg);
+    background-size: auto;
+    background-repeat: no-repeat;
+}

@@ -7,13 +7,13 @@
     margin: auto;
     text-align: left;
     padding-top: 100px;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nature,mountains,outside);
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nature);
     background-size: auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 body {
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nature,mountains,outside);
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?nature);
     background-size: auto;
     background-repeat: no-repeat;
     height: 600px;

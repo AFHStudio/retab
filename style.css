@@ -296,7 +296,9 @@
     margin-left: 250px;
     margin-top: 20px;
 }
-
+#radiotext{
+    font-size: 20px;
+}
 
 
 
@@ -441,6 +443,17 @@ input{
     margin: auto;
 }
 .fontselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.bgthemeselector{
     margin-top: 20px;
     margin-left: 250px;
     border-radius: 5px;
