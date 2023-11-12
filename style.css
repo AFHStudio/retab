@@ -475,3 +475,24 @@ input{
     padding: 5px 25px;
     color: #FFF;
 }
+.settingscontainer #textcolorinput{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.settingscontainer .setcolorbutton{
+    border-radius: 5px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding-left: 30px;
+}
+.settingscontainer .setcolorbutton:hover{
+    cursor: pointer;
+}

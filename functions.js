@@ -490,7 +490,7 @@ function initFontSelector() {
     function initBGThemeSelector() {
       const bgselect = document.getElementById("bgthemeselector");
       const bgstylesheetlink = document.getElementById("bgstylesheet");
-      const currentbgtheme = localStorage.getItem("backgroundtheme") || "nature";
+      const currentbgtheme = localStorage.getItem("backgroundtheme") || "default";
   
       function activateBGTheme(bgthemename) {
           bgstylesheetlink.setAttribute("href", `themes/background/${bgthemename}.css`);
@@ -528,4 +528,15 @@ function initFontSelector() {
     activateSearchTheme(currentsearchtheme);
 }
 initOldSearchSelector();
+function settextcolor() {
+  const newcolor = document.getElementById('textcolorinput').value;
+  window.localStorage.setItem('textcolor', newcolor);
+  window.location.reload();
+}
+document.getElementById('setcolorbutton').addEventListener('click', settextcolor, false);
+const currentcolor = localStorage.getItem("textcolor") || "#FFF";
+var alltext = document.getElementsByTagName("*");
+for (var i=0, max=alltext.length; i < max; i++) {
+  alltext[i].style.color = currentcolor;
+}
 
