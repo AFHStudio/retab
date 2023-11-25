@@ -7,26 +7,36 @@ document.getElementById('resetyoutubebutton').addEventListener('click', resetyou
 function resetyoutube(){
   localStorage.removeItem('youtubeurl');
   localStorage.removeItem('youtubeicon');
+  window.location.reload();
 }
 document.getElementById('resetgithubbutton').addEventListener('click', resetgithub, false);
 function resetgithub(){
   localStorage.removeItem('githuburl');
   localStorage.removeItem('githubicon');
+  window.location.reload();
 }
 document.getElementById('resetspotifybutton').addEventListener('click', resetspotify, false);
 function resetspotify(){
   localStorage.removeItem('spotifyurl');
   localStorage.removeItem('spotifyicon');
+  window.location.reload();
 }
 document.getElementById('resettwitterbutton').addEventListener('click', resettwitter, false);
 function resettwitter(){
   localStorage.removeItem('twitterurl');
   localStorage.removeItem('twittericon');
+  window.location.reload();
 }
 document.getElementById('resetdiscordbutton').addEventListener('click', resetdiscord, false);
 function resetdiscord(){
   localStorage.removeItem('discordurl');
   localStorage.removeItem('discordicon');
+  window.location.reload();
+}
+document.getElementById('resettextcolorbutton').addEventListener('click', resettextcolor, false);
+function resettextcolor(){
+  localStorage.removeItem('textcolor');
+  window.location.reload();
 }
 document.addEventListener('DOMContentLoaded', function() {
 if (localStorage.getItem("user") === null) {
@@ -135,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('aboutsection').style.display = 'block';
     document.getElementById('customiconssection').style.visibility = 'hidden';
     document.getElementById('customiconssection').style.display = 'none';
+    document.getElementById('togglefeaturessection').style.visibility = 'hidden';
+    document.getElementById('togglefeaturessection').style.display = 'none';
   })
   document.getElementById('general').addEventListener('click', () => {
     document.getElementById('generalsection').style.visibility = 'visible';
@@ -145,6 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('aboutsection').style.display = 'none';
     document.getElementById('customiconssection').style.visibility = 'hidden';
     document.getElementById('customiconssection').style.display = 'none';
+    document.getElementById('togglefeaturessection').style.visibility = 'hidden';
+    document.getElementById('togglefeaturessection').style.display = 'none';
   })
   document.getElementById('icons').addEventListener('click', () => {
     document.getElementById('generalsection').style.visibility = 'hidden';
@@ -155,6 +169,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('aboutsection').style.display = 'none';
     document.getElementById('customiconssection').style.visibility = 'visible';
     document.getElementById('customiconssection').style.display = 'block';
+    document.getElementById('togglefeaturessection').style.visibility = 'hidden';
+    document.getElementById('togglefeaturessection').style.display = 'none';
   })
   document.getElementById('kofi').addEventListener('click', () => {
     window.open('https://ko-fi.com/afhstudio')
@@ -171,6 +187,20 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('aboutsection').style.display = 'none';
     document.getElementById('customiconssection').style.visibility = 'hidden';
     document.getElementById('customiconssection').style.display = 'none';
+    document.getElementById('togglefeaturessection').style.visibility = 'hidden';
+    document.getElementById('togglefeaturessection').style.display = 'none';
+})
+document.getElementById('togglefeatures').addEventListener('click', () => {
+  document.getElementById('generalsection').style.visibility = 'hidden';
+  document.getElementById('generalsection').style.display = 'none';
+  document.getElementById('appearancesection').style.visibility = 'hidden';
+  document.getElementById('appearancesection').style.display = 'none';
+  document.getElementById('aboutsection').style.visibility = 'hidden';
+  document.getElementById('aboutsection').style.display = 'none';
+  document.getElementById('customiconssection').style.visibility = 'hidden';
+  document.getElementById('customiconssection').style.display = 'none';
+  document.getElementById('togglefeaturessection').style.visibility = 'visible';
+  document.getElementById('togglefeaturessection').style.display = 'block';
 })
   
 
@@ -435,7 +465,7 @@ const twitterlink = document.getElementById('twitter');
 const twittericon = document.getElementById('twittericon');
 
 document.getElementById('settwitterbutton').addEventListener('click', () => {
-if (twitterurlinput.value.trim() !== '' && twitterconinput.value.trim() !== '') {
+if (twitterurlinput.value.trim() !== '' && twittericoninput.value.trim() !== '') {
 localStorage.setItem('twitterurl', twitterurlinput.value.trim());
 localStorage.setItem('twittericon', twittericoninput.value.trim());
 

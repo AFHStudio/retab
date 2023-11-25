@@ -33,7 +33,8 @@
 .settingscontainer{
     background-color: rgba(18, 18, 18, 0.548);
     width: 100%;
-    height: 800px;
+    height: 100vh;
+    
     display: none;
     animation: slide-bottom 1s;
 }
@@ -285,6 +286,11 @@
     display: none;
     animation: fadeIn 1.2s;
 }
+#togglefeaturessection{
+    visibility: hidden;
+    display: none;
+    animation: fadeIn 1.2s;
+}
 #generalsection{
     animation: fadeIn 1.2s;
 }
@@ -494,5 +500,15 @@ input{
     padding-left: 30px;
 }
 .settingscontainer .setcolorbutton:hover{
+    cursor: pointer;
+}
+.settingscontainer .resettextcolorbutton{
+    border-radius: 5px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding-left: 30px;
+}
+.settingscontainer .resettextcolorbutton:hover{
     cursor: pointer;
 }

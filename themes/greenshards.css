@@ -11,12 +11,12 @@
     text-align: left;
     padding-top: 100px;
     background-image: url(greenshards.jpeg);
-    background-size: auto;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 body {
     background-image: url(greenshards.jpeg);
-    background-size: auto;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 .main h1{

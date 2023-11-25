@@ -1,5 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
 *{
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: 400;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+    font-weight: 300;
 }
