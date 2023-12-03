@@ -33,7 +33,7 @@
 .settingscontainer{
     background-color: rgba(18, 18, 18, 0.548);
     width: 100%;
-    height: 100vh;
+    height: 100vw;
     
     display: none;
     animation: slide-bottom 1s;
@@ -481,6 +481,50 @@ input{
     padding: 5px 25px;
     color: #FFF;
 }
+.snowselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.iconsselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.quoteselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.weatherselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
 .settingscontainer #textcolorinput{
     margin-top: 20px;
     margin-left: 250px;
@@ -510,5 +554,57 @@ input{
     padding-left: 30px;
 }
 .settingscontainer .resettextcolorbutton:hover{
+    cursor: pointer;
+}
+.settingscontainer #timesizeinput{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.settingscontainer .settimesizebutton{
+    border-radius: 5px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding-left: 30px;
+}
+.settingscontainer .settimesizebutton:hover{
+    cursor: pointer;
+}
+.settingscontainer .resettimesizebutton{
+    border-radius: 5px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding-left: 30px;
+}
+.settingscontainer .resettimesizebutton:hover{
+    cursor: pointer;
+}
+.settingscontainer #cityinput{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.settingscontainer .setcitybutton{
+    border-radius: 5px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding-left: 30px;
+}
+.settingscontainer .setcitybutton:hover{
     cursor: pointer;
 }

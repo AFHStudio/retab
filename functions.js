@@ -38,6 +38,11 @@ function resettextcolor(){
   localStorage.removeItem('textcolor');
   window.location.reload();
 }
+document.getElementById('resettimesizebutton').addEventListener('click', resettimesize, false);
+function resettimesize(){
+  localStorage.removeItem('timesize');
+  window.location.reload();
+}
 document.addEventListener('DOMContentLoaded', function() {
 if (localStorage.getItem("user") === null) {
     document.getElementById('namedialog').style.display = "block";
@@ -332,7 +337,16 @@ else if (hrs >= 17 && hrs <= 24)
               '"Do what you can, with what you have, where you are."',
               '"Do the best you can. No one can do more than that."',
               '"If you change the way you look at things, the things you look at change."',
-              '"Never back down, never give up"' 
+              '"It is often the small steps, not the giant leaps, that bring about the most lasting change."',
+              '"Education is the most powerful weapon which you can use to change the world.',
+              `"There is always light. If only we're brave enough to see it. If only we're brave enough to be it."`,
+              '"All our dreams can come true — if we have the courage to pursue them."',
+              '"Learn as if you will live forever, live like you will die tomorrow."',
+              '"When you change your thoughts, remember to also change your world."',
+              `"If you are working on something that you really care about, you don't have to be pushed. The vision pulls you."`,
+              `"Believe you can and you're halfway there."`,
+              '"The only way to do great work is to love what you do."',
+              `"The harder you work for something, the greater you'll feel when you achieve it."`
             ];
             var pick = Math.floor(Math.random() * (quotes.length));
           document.getElementById("quote").innerText = (quotes[pick]);
@@ -430,7 +444,7 @@ const githublink = document.getElementById('github');
 const githubicon = document.getElementById('githubicon');
 
 document.getElementById('setgithubbutton').addEventListener('click', () => {
-if (youtubeurlinput.value.trim() !== '' && githubiconinput.value.trim() !== '') {
+if (githuburlinput.value.trim() !== '' && githubiconinput.value.trim() !== '') {
 localStorage.setItem('githuburl', githuburlinput.value.trim());
 localStorage.setItem('githubicon', githubiconinput.value.trim());
 
@@ -448,7 +462,7 @@ const spotifylink = document.getElementById('spotify');
 const spotifyicon = document.getElementById('spotifyicon');
 
 document.getElementById('setspotifybutton').addEventListener('click', () => {
-if (spotifyurlinput.value.trim() !== '' && spotifyconinput.value.trim() !== '') {
+if (spotifyurlinput.value.trim() !== '' && spotifyiconinput.value.trim() !== '') {
 localStorage.setItem('spotifyurl', spotifyurlinput.value.trim());
 localStorage.setItem('spotifyicon', spotifyiconinput.value.trim());
 
@@ -482,7 +496,7 @@ const discordlink = document.getElementById('discord');
 const discordicon = document.getElementById('discordicon');
 
 document.getElementById('setdiscordbutton').addEventListener('click', () => {
-if (discordurlinput.value.trim() !== '' && discordconinput.value.trim() !== '') {
+if (discordurlinput.value.trim() !== '' && discordiconinput.value.trim() !== '') {
 localStorage.setItem('discordurl', discordurlinput.value.trim());
 localStorage.setItem('discordicon', discordiconinput.value.trim());
 
@@ -558,6 +572,66 @@ function initFontSelector() {
     activateSearchTheme(currentsearchtheme);
 }
 initOldSearchSelector();
+function initIconsSwitcher() {
+  const iconsselect = document.getElementById("iconsselector");
+  const iconsstylesheetlink = document.getElementById("iconsstylesheet");
+  const currenticonsoption = localStorage.getItem("icons") || "on";
+
+  function activateIconsOption(iconsoption) {
+      iconsstylesheetlink.setAttribute("href", `themes/icons/${iconsoption}.css`);
+  }
+
+  iconsselect.addEventListener("change", () => {
+      activateIconsOption(iconsselect.value);
+      localStorage.setItem("icons", iconsselect.value);
+      window.location.reload();
+  });
+
+
+  iconsselect.value = currenticonsoption;
+  activateIconsOption(currenticonsoption);
+}
+initIconsSwitcher();
+function initWeatherSwitcher() {
+  const weatherselect = document.getElementById("weatherselector");
+  const weatherstylesheetlink = document.getElementById("weatherstylesheet");
+  const currentweatheroption = localStorage.getItem("weather") || "on";
+
+  function activateWeatherOption(weatheroption) {
+      weatherstylesheetlink.setAttribute("href", `themes/weather/${weatheroption}.css`);
+  }
+
+  weatherselect.addEventListener("change", () => {
+      activateWeatherOption(weatherselect.value);
+      localStorage.setItem("weather", weatherselect.value);
+      window.location.reload();
+  });
+
+
+  weatherselect.value = currentweatheroption;
+  activateWeatherOption(currentweatheroption);
+}
+initWeatherSwitcher();
+function initQuoteSwitcher() {
+  const quoteselect = document.getElementById("quoteselector");
+  const quotestylesheetlink = document.getElementById("quotestylesheet");
+  const currentquoteoption = localStorage.getItem("quote") || "on";
+
+  function activateQuoteOption(quoteoption) {
+      quotestylesheetlink.setAttribute("href", `themes/quote/${quoteoption}.css`);
+  }
+
+  quoteselect.addEventListener("change", () => {
+      activateQuoteOption(quoteselect.value);
+      localStorage.setItem("quote", quoteselect.value);
+      window.location.reload();
+  });
+
+
+  quoteselect.value = currentquoteoption;
+  activateQuoteOption(currentquoteoption);
+}
+initQuoteSwitcher();
 function settextcolor() {
   const newcolor = document.getElementById('textcolorinput').value;
   window.localStorage.setItem('textcolor', newcolor);
@@ -569,4 +643,36 @@ var alltext = document.getElementsByTagName("*");
 for (var i=0, max=alltext.length; i < max; i++) {
   alltext[i].style.color = currentcolor;
 }
+function settimesize() {
+  const newtimesize = document.getElementById('timesizeinput').value;
+  window.localStorage.setItem('timesize', newtimesize);
+  window.location.reload();
+}
+document.getElementById('settimesizebutton').addEventListener('click', settimesize, false);
+const currenttimesize = localStorage.getItem("timesize") || "60px";
+var timetext = document.querySelector(".time")
+timetext.style.fontSize = currenttimesize;
 
+function initSnow() {
+  const snowselect = document.getElementById("snowselector");
+  const snowonoff = localStorage.getItem("snow") || "off";
+  snowselect.addEventListener("change", () => {
+      localStorage.setItem("snow", snowselect.value);
+      window.location.reload();
+  });
+snowselect.value = snowonoff;
+}
+initSnow();
+function checkSnow() {
+  if (localStorage.getItem("snow") === "on") {
+    let snowscript = document.getElementById("snowscript")
+    snowscript.setAttribute('src','snowstorm.js');
+  }
+}
+checkSnow();
+function setnewcity() {
+  const newcity = document.getElementById('cityinput').value;
+  window.localStorage.setItem('city', newcity);
+  window.location.reload();
+}
+document.getElementById('setcitybutton').addEventListener('click', setnewcity, false);

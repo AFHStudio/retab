@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head class="head">
         <title>New Tab</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" id="themestylesheet" href="themes/default.css">
         <link rel="stylesheet" id="fontstylesheet" href="fonts/inter.css">
-        <link rel="stylesheet" id="bgstylesheet" href="themes/background/defaulttotheme.css">
+        <link rel="stylesheet" id="bgstylesheet" href="themes/background/default.css">
         <link rel="stylesheet" id="oldsearchstylesheet" href="themes/searchbar/off.css">
+        <link rel="stylesheet" id="iconsstylesheet" href="themes/icons/on.css">
+        <link rel="stylesheet" id="weatherstylesheet" href="themes/weather/on.css">
+        <link rel="stylesheet" id="quotestylesheet" href="themes/quote/on.css">
         <script src="a1ad0aaccb.js" defer></script>
         <script src="functions.js" defer></script>
+        <script id="snowscript" defer></script>
         <link rel="icon" type="image/x-icon" href="favicon.png">
         <meta charset="UTF-8">
         <meta content='width=device-width, initial-scale=1' name='viewport'/>
@@ -49,6 +53,9 @@
                     <input type="text" id="quoteinput" placeholder='Quote'/>
                     <input type="button" value="Set" class="setquotebutton" id="setquotebutton"/>
                     <input type="button" value="Reset" class="resetquotebutton" id="resetquotebutton"/>
+                    <h3 id="newweathertext">Set a new weather location:</h3>
+                    <input type="text" id="cityinput" placeholder='City'/>
+                    <input type="button" value="Set" class="setcitybutton" id="setcitybutton"/>
               </section>
               
                 <section id="appearancesection">
@@ -85,7 +92,6 @@
                         <option value="merriweather">Merriweather</option>
                         <option value="oswald">Oswald</option>
                         <option value="notoserif">Noto Serif</option>
-                        <option value="helvetica">Helvetica</option>
                         <option value="saira">Saira</option>
                         <option value="indieflower">Indie Flower</option>
                         <option value="comicneue">Comic Neue</option>
@@ -98,7 +104,7 @@
                     </select>
                     <h3>Choose a background theme:</h3>
                     <select id="bgthemeselector" class="bgthemeselector">
-                        <option value="defaulttotheme">Default (matches theme)</option>
+                        <option value="default">Default (matches theme)</option>
                         <option value="retro">Retro</option>
                         <option value="greenshards">Green Black Shards</option>
                         <option value="redshards">Red Black Shards</option>
@@ -120,6 +126,10 @@
                     <input type="text" id="textcolorinput" placeholder='Hex code / HTML Color'/>
                     <input type="button" value="Set" class="setcolorbutton" id="setcolorbutton"/>
                     <input type="button" value="Reset" class="resettextcolorbutton" id="resettextcolorbutton"/>
+                    <h3>Set time's text size:</h3>
+                    <input type="text" id="timesizeinput" placeholder='Size (in px)'/>
+                    <input type="button" value="Set" class="settimesizebutton" id="settimesizebutton"/>
+                    <input type="button" value="Reset" class="resettimesizebutton" id="resettimesizebutton"/>
                 </section>
                 <section id="customiconssection">
                 <h3 id="customicontext">Change the icons on your homepage (FOR EXPERIENCED USERS ONLY)</h3>
@@ -131,14 +141,33 @@
                 <i id="customdiscord" class="fa-brands fa-discord"></i></a><input type="text" id="discordurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="discordiconinput"><input type="button" value="Set" class="setdiscordbutton" id="setdiscordbutton"/><input type="button" value="Reset" class="resetdiscordbutton" id="resetdiscordbutton"/>
                 </section>
                 <section id="togglefeaturessection">
-                    <h3 id="togglefeaturestitle">Toggle the items on your homepage</h3>
-                    <p id="comingsoon">Coming soon...</p>
+                    <h3>Snow:</h3>
+                    <select id="snowselector" class="snowselector">
+                        <option value="off">Off (Default)</option>
+                        <option value="on">On</option>
+                    </select>
+                    <h3>Icons/Links:</h3>
+                    <select id="iconsselector" class="iconsselector">
+                        <option value="on">On (Default)</option>
+                        <option value="off">Off</option>
+                    </select>
+                    <h3>Weather:</h3>
+                    <select id="weatherselector" class="weatherselector">
+                        <option value="on">On (Default)</option>
+                        <option value="off">Off</option>
+                    </select>
+                    <h3>Quote:</h3>
+                    <select id="quoteselector" class="quoteselector">
+                        <option value="on">On (Default)</option>
+                        <option value="off">Off</option>
+                    </select>
                 </section>
                 <section id="aboutsection">
                 <h3 id="abouttext">About Homepage Revamped</h3>
-                <p id="version">v2.1.5 (11.25.2023)</p>
+                <p id="version">v2.1.6 (12.03.2023)</p>
                 <p id="sourcetext"><a id="sourcelink" href=https://github.com/AFHStudio/homepage-revamped>View the source code</a> on GitHub</p>
                 <p id="madewithlove">Made with <i class="fa-solid fa-heart"></i> by the AFHStudio team</p> 
+                <p id="thankssnow">Thanks to snowstorm.js for the snow, Copyright (c) 2003, Scott Schiller (schillmania.com) All rights reserved.</p>
                 <h3 id='radiotext' style="padding-top: 50px;">Listen to our radio! This can be played on other settings pages and even when settings is closed!</h3>
                 <iframe src="https://radio.afhstudio.link/public/game_radio/embed?theme=dark" frameborder="0" allowtransparency="true" style="width: 30%; min-height: 150px; border: 0; margin-left: 250px; margin-top: 20px;"></iframe>           
                 </section>
