@@ -9,10 +9,10 @@ function resetyoutube(){
   localStorage.removeItem('youtubeicon');
   window.location.reload();
 }
-document.getElementById('resetgithubbutton').addEventListener('click', resetgithub, false);
-function resetgithub(){
-  localStorage.removeItem('githuburl');
-  localStorage.removeItem('githubicon');
+document.getElementById('resetgmailbutton').addEventListener('click', resetgmail, false);
+function resetgmail(){
+  localStorage.removeItem('gmailurl');
+  localStorage.removeItem('gmailicon');
   window.location.reload();
 }
 document.getElementById('resetspotifybutton').addEventListener('click', resetspotify, false);
@@ -64,17 +64,25 @@ setTimeout(function() {
   }, 5184000000);
 const key = '719d1c97dd98f1a4f06d87a13956cb2a';
 const city = localStorage.getItem('city');
+const units = localStorage.getItem('units');
+const metrictext = localStorage.getItem('unittext');
 
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=${units}`)
 .then(response => response.json())
 .then(data => {
   const temp = data.main.temp;
   document.getElementById('city').innerHTML = city;
-  document.getElementById('weather').innerHTML = `${temp}°C`;
+  document.getElementById('weather').innerHTML = `${temp}${metrictext}`;
   var weathericon = data.weather[0].icon;
   const weathericonid = document.getElementById('weathericon')
   weathericonid.src = `https://openweathermap.org/img/wn/${weathericon}@2x.png`;
 })
+if (localStorage.getItem("units") === "imperial") {
+  localStorage.setItem("unittext", "°F");
+}
+if (localStorage.getItem("units") === "metric") {
+  localStorage.setItem("unittext", "°C");
+}
 function firsttimename() {
   const name = document.getElementById('nameinputfirst').value;
   localStorage.setItem("user", name);
@@ -105,11 +113,11 @@ function checkcustomicons(){
     youtubelink.href = localStorage.getItem('youtubeurl');
     youtubeicon.className = localStorage.getItem('youtubeicon');
   }
-  if (localStorage.getItem('githuburl') && localStorage.getItem('githubicon') !== null){
-    const githublink = document.getElementById('github');
-    const githubicon = document.getElementById('githubicon');
-    githublink.href = localStorage.getItem('githuburl');
-    githubicon.className = localStorage.getItem('githubicon');
+  if (localStorage.getItem('gmailurl') && localStorage.getItem('gmailicon') !== null){
+    const gmaillink = document.getElementById('gmail');
+    const gmailicon = document.getElementById('gmailicon');
+    gmaillink.href = localStorage.getItem('gmailurl');
+    gmailicon.className = localStorage.getItem('gmailicon');
   }
   if (localStorage.getItem('spotifyurl') && localStorage.getItem('spotifyicon') !== null){
     const spotifylink = document.getElementById('spotify');
@@ -234,12 +242,12 @@ function initThemeSelector() {
 }
 initThemeSelector();
 
-const theme = localStorage.getItem("theme")
+const theme = localStorage.getItem("theme");
 if (theme === "classroom") {
-  const github = document.getElementById("githubicon")
-  github.setAttribute("class", "fa-solid fa-chalkboard")
-  const githublink = document.getElementById("github")
-  githublink.setAttribute("href", "https://classroom.google.com")
+  const gmail = document.getElementById("gmailicon")
+  gmail.setAttribute("class", "fa-solid fa-chalkboard")
+  const gmaillink = document.getElementById("gmail")
+  gmaillink.setAttribute("href", "https://classroom.google.com")
   const discord = document.getElementById("discordicon")
   discord.setAttribute("class", "fa-brands fa-google-drive")
   const discordlink = document.getElementById("discord")
@@ -249,7 +257,35 @@ if (theme === "classroom") {
   const twitterlink = document.getElementById("twitter")
   twitterlink.setAttribute("href", "https://meet.google.com")
 }
-
+const iconpack = localStorage.getItem("iconpack")
+if (iconpack === "gaming") {
+  const gmail = document.getElementById("gmailicon")
+  gmail.setAttribute("class", "fa-brands fa-steam")
+  const gmaillink = document.getElementById("gmail")
+  gmaillink.setAttribute("href", "https://store.steampowered.com")
+  const discord = document.getElementById("discordicon")
+  discord.setAttribute("class", "fa-brands fa-twitch")
+  const discordlink = document.getElementById("discord")
+  discordlink.setAttribute("href", "https://twitch.tv")
+  const twitter = document.getElementById("twittericon")
+  twitter.setAttribute("class", "fa-brands fa-discord")
+  const twitterlink = document.getElementById("twitter")
+  twitterlink.setAttribute("href", "https://discord.com/channels/@me")
+}
+if (iconpack === "developer") {
+  const gmail = document.getElementById("gmailicon")
+  gmail.setAttribute("class", "fa-brands fa-stack-overflow")
+  const gmaillink = document.getElementById("gmail")
+  gmaillink.setAttribute("href", "https://stackoverflow.com")
+  const discord = document.getElementById("discordicon")
+  discord.setAttribute("class", "fa-brands fa-discord")
+  const discordlink = document.getElementById("discord")
+  discordlink.setAttribute("href", "https://discord.com/channels/@me")
+  const twitter = document.getElementById("twittericon")
+  twitter.setAttribute("class", "fa-brands fa-cloudflare")
+  const twitterlink = document.getElementById("twitter")
+  twitterlink.setAttribute("href", "https://dash.cloudflare.com")
+}
 const timeElement = document.querySelector(".time");
 const dateElement = document.querySelector(".date");
 
@@ -338,7 +374,7 @@ else if (hrs >= 17 && hrs <= 24)
               '"Do the best you can. No one can do more than that."',
               '"If you change the way you look at things, the things you look at change."',
               '"It is often the small steps, not the giant leaps, that bring about the most lasting change."',
-              '"Education is the most powerful weapon which you can use to change the world.',
+              '"Education is the most powerful weapon which you can use to change the world."',
               `"There is always light. If only we're brave enough to see it. If only we're brave enough to be it."`,
               '"All our dreams can come true — if we have the courage to pursue them."',
               '"Learn as if you will live forever, live like you will die tomorrow."',
@@ -438,19 +474,19 @@ youtubeicon.className = localStorage.getItem('youtubeicon');
 alert('Please fill in both fields before setting the icon and link.');
 }
 });
-const githuburlinput = document.getElementById('githuburlinput');
-const githubiconinput = document.getElementById('githubiconinput');
-const githublink = document.getElementById('github');
-const githubicon = document.getElementById('githubicon');
+const gmailurlinput = document.getElementById('gmailurlinput');
+const gmailiconinput = document.getElementById('gmailiconinput');
+const gmaillink = document.getElementById('gmail');
+const gmailicon = document.getElementById('gmailicon');
 
-document.getElementById('setgithubbutton').addEventListener('click', () => {
-if (githuburlinput.value.trim() !== '' && githubiconinput.value.trim() !== '') {
-localStorage.setItem('githuburl', githuburlinput.value.trim());
-localStorage.setItem('githubicon', githubiconinput.value.trim());
+document.getElementById('setgmailbutton').addEventListener('click', () => {
+if (gmailurlinput.value.trim() !== '' && gmailiconinput.value.trim() !== '') {
+localStorage.setItem('gmailurl', gmailurlinput.value.trim());
+localStorage.setItem('gmailicon', gmailiconinput.value.trim());
 
-githublink.href = localStorage.getItem('githuburl');
+gmaillink.href = localStorage.getItem('gmailurl');
 
-githubicon.className = localStorage.getItem('githubicon');
+gmailicon.className = localStorage.getItem('gmailicon');
 } else {
 alert('Please fill in both fields before setting the icon and link.');
 }
@@ -676,3 +712,23 @@ function setnewcity() {
   window.location.reload();
 }
 document.getElementById('setcitybutton').addEventListener('click', setnewcity, false);
+function weatherMetricpicker() {
+  const weathertypeselect = document.getElementById("weathertypeselector");
+  const weatherpicker = localStorage.getItem("units") || "metric";
+  weathertypeselect.addEventListener("change", () => {
+      localStorage.setItem("units", weathertypeselect.value);
+      window.location.reload();
+  });
+weathertypeselect.value = weatherpicker;
+}
+weatherMetricpicker();
+function iconpackswitcher() {
+  const iconpackselect = document.getElementById("iconpackselector");
+  const iconpackpicker = localStorage.getItem("iconpack") || "default";
+  iconpackselect.addEventListener("change", () => {
+      localStorage.setItem("iconpack", iconpackselect.value);
+      window.location.reload();
+  });
+iconpackselect.value = iconpackpicker;
+}
+iconpackswitcher();

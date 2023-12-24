@@ -56,6 +56,11 @@
                     <h3 id="newweathertext">Set a new weather location:</h3>
                     <input type="text" id="cityinput" placeholder='City'/>
                     <input type="button" value="Set" class="setcitybutton" id="setcitybutton"/>
+                    <h3>Celsius / Fahrenheit</h3>
+                    <select id="weathertypeselector" class="weathertypeselector">
+                        <option value="metric">Celsius (Default)</option>
+                        <option value="imperial">Fahrenheit</option>
+                    </select>
               </section>
               
                 <section id="appearancesection">
@@ -130,12 +135,18 @@
                     <input type="text" id="timesizeinput" placeholder='Size (in px)'/>
                     <input type="button" value="Set" class="settimesizebutton" id="settimesizebutton"/>
                     <input type="button" value="Reset" class="resettimesizebutton" id="resettimesizebutton"/>
+                    <h3>Icon Pack:</h3>
+                    <select id="iconpackselector" class="iconpackselector">
+                        <option value="default">Default</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="developer">Developer</option>
+                    </select>
                 </section>
                 <section id="customiconssection">
                 <h3 id="customicontext">Change the icons on your homepage (FOR EXPERIENCED USERS ONLY)</h3>
                 <p>Get icons from <a href='https://fontawesome.com'>Font Awesome and copy the text in the class="copythispart". Only fa-solid and fa-brands work for now.</a></p>
                 <i id="customyoutube" class="fa-brands fa-youtube"></i></a><input type="text" id="youtubeurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="youtubeiconinput"><input type="button" value="Set" class="setyoutubebutton" id="setyoutubebutton"/><input type="button" value="Reset" class="resetyoutubebutton" id="resetyoutubebutton"/>
-                <i id="customgithub" class="fa-brands fa-github"></i></a><input type="text" id="githuburlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="githubiconinput"><input type="button" value="Set" class="setgithubbutton" id="setgithubbutton"/><input type="button" value="Reset" class="resetgithubbutton" id="resetgithubbutton"/>
+                <i id="customgmail" class="fa-solid fa-envelope"></i></a><input type="text" id="gmailurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="gmailiconinput"><input type="button" value="Set" class="setgmailbutton" id="setgmailbutton"/><input type="button" value="Reset" class="resetgmailbutton" id="resetgmailbutton"/>
                 <i id="customspotify" class="fa-brands fa-spotify"></i></a><input type="text" id="spotifyurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="spotifyiconinput"><input type="button" value="Set" class="setspotifybutton" id="setspotifybutton"/><input type="button" value="Reset" class="resetspotifybutton" id="resetspotifybutton"/>
                 <i id="customtwitter" class="fa-brands fa-twitter"></i></a><input type="text" id="twitterurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="twittericoninput"><input type="button" value="Set" class="setdiscordbutton" id="settwitterbutton"/><input type="button" value="Reset" class="resettwitterbutton" id="resettwitterbutton"/>
                 <i id="customdiscord" class="fa-brands fa-discord"></i></a><input type="text" id="discordurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="discordiconinput"><input type="button" value="Set" class="setdiscordbutton" id="setdiscordbutton"/><input type="button" value="Reset" class="resetdiscordbutton" id="resetdiscordbutton"/>
@@ -164,7 +175,7 @@
                 </section>
                 <section id="aboutsection">
                 <h3 id="abouttext">About Homepage Revamped</h3>
-                <p id="version">v2.1.6 (12.03.2023)</p>
+                <p id="version">v2.1.7 (12.24.2023)</p>
                 <p id="sourcetext"><a id="sourcelink" href=https://github.com/AFHStudio/homepage-revamped>View the source code</a> on GitHub</p>
                 <p id="madewithlove">Made with <i class="fa-solid fa-heart"></i> by the AFHStudio team</p> 
                 <p id="thankssnow">Thanks to snowstorm.js for the snow, Copyright (c) 2003, Scott Schiller (schillmania.com) All rights reserved.</p>
@@ -186,7 +197,7 @@
             <h1 id="welcome"></h1>
             <div class="quicklinks">
                 <a id="youtube" href="https://youtube.com/"><i id="youtubeicon" class="fa-brands fa-youtube"></i></a>
-                <a id="github" href="https://github.com/"><i id="githubicon" class="fa-brands fa-github"></i></a>
+                <a id="gmail" href="https://mail.google.com/"><i id="gmailicon" class="fa-solid fa-envelope"></i></a>
                 <a id="spotify" href="https://open.spotify.com"><i id="spotifyicon" class="fa-brands fa-spotify"></i></a>
                 <a id="twitter" href="https://twitter.com/"><i id="twittericon" class="fa-brands fa-twitter"></i></a>
                 <a id="discord" href="https://discord.com/channels/@me"><i id="discordicon" class="fa-brands fa-discord"></i></a>

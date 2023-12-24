@@ -113,6 +113,7 @@
 .settingscontainer .resetbackgroundbutton:hover{
     cursor: pointer;
 }
+
 .settingscontainer .resetquotebutton{
     border-radius: 5px;
     background: none;
@@ -165,14 +166,14 @@
 .searchbar button:hover{
     transform: scale(1.5);
 }
-.settingscontainer #customyoutube, #customgithub, #customspotify, #customtwitter, #customdiscord{
+.settingscontainer #customyoutube, #customgmail, #customspotify, #customtwitter, #customdiscord{
     font-size: 25px;
     display: flex;
     margin-left: 250px;
     margin-top: 20px;
     color: white;
 }
-.settingscontainer #youtubeurlinput,#githuburlinput, #spotifyurlinput, #twitterurlinput, #discordurlinput{
+.settingscontainer #youtubeurlinput,#gmailurlinput, #spotifyurlinput, #twitterurlinput, #discordurlinput{
     margin-left: 250px;
     margin-top: 20px;
     border-radius: 5px;
@@ -183,7 +184,7 @@
     padding: 5px 25px;
     color: #FFF;
 }
-.settingscontainer #youtubeiconinput, #githubiconinput, #spotifyiconinput, #twittericoninput, #discordiconinput{
+.settingscontainer #youtubeiconinput, #gmailiconinput, #spotifyiconinput, #twittericoninput, #discordiconinput{
     margin-left: 25px;
     border-radius: 5px;
     background-color: #343434;
@@ -193,24 +194,24 @@
     padding: 5px 25px;
     color: #FFF;
 }
-.settingscontainer #setyoutubebutton, #setgithubbutton, #setspotifybutton, #settwitterbutton, #setdiscordbutton{
+.settingscontainer #setyoutubebutton, #setgmailbutton, #setspotifybutton, #settwitterbutton, #setdiscordbutton{
     margin-left: 25px;
     border-radius: 5px;
     background: none;
     color: rgb(255, 255, 255);
     border: none;
 }
-.settingscontainer #setyoutubebutton:hover, #setgithubbutton:hover, #setspotifybutton:hover, #settwitterbutton:hover, #setdiscordbutton:hover{
+.settingscontainer #setyoutubebutton:hover, #setgmailbutton:hover, #setspotifybutton:hover, #settwitterbutton:hover, #setdiscordbutton:hover{
     cursor: pointer;
 }
-.settingscontainer #resetyoutubebutton, #resetgithubbutton, #resetspotifybutton, #resettwitterbutton, #resetdiscordbutton{
+.settingscontainer #resetyoutubebutton, #resetgmailbutton, #resetspotifybutton, #resettwitterbutton, #resetdiscordbutton{
     margin-left: 25px;
     border-radius: 5px;
     background: none;
     color: rgb(255, 255, 255);
     border: none;
 }
-.settingscontainer #resetyoutubebutton:hover, #resetgithubbutton:hover, #resetspotifybutton:hover, #resettwitterbutton:hover, #resetdiscordbutton:hover{
+.settingscontainer #resetyoutubebutton:hover, #resetgmailbutton:hover, #resetspotifybutton:hover, #resettwitterbutton:hover, #resetdiscordbutton:hover{
     cursor: pointer;
 }
 .settingscontainer #quoteinput{
@@ -403,32 +404,6 @@
     margin-left: 220px;
     margin-top: 30px;
 }
-#ccbutton{
-    border-radius: 5px;
-    border: 2px solid rgb(255, 255, 255);
-    background: none;
-    padding: 5px 10px;
-    color: rgb(255, 255, 255);
-    margin-left: 250px;
-    margin-top: 30px;
-    display: none;
-}
-#iaprimebutton{
-    border-radius: 5px;
-    border: 2px solid rgb(255, 255, 255);
-    background: none;
-    padding: 5px 10px;
-    color: rgb(255, 255, 255);
-    margin-left: 250px;
-    margin-top: 30px;
-    display: none;
-}
-#ccbutton:hover{
-    cursor: pointer;
-}
-#iaprimebutton:hover{
-    cursor: pointer;
-}
 .quicklinks .fa-solid{
     font-size: 40px;
     color: rgb(255, 255, 255);
@@ -438,6 +413,18 @@
     text-align: center;
 }
 .quicklinks .fa-solid:hover{
+    color:rgb(255, 0, 0);
+    transform: scale(1.5);
+}
+.quicklinks .fa-brands{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    padding: 20px 15px;
+    animation: fadeIn 2s;
+    transition: transform .2s;
+    text-align: center;
+}
+.quicklinks .fa-brands:hover{
     color:rgb(255, 0, 0);
     transform: scale(1.5);
 }
@@ -471,6 +458,17 @@ input{
     color: #FFF;
 }
 .oldsearchselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.iconpackselector{
     margin-top: 20px;
     margin-left: 250px;
     border-radius: 5px;
@@ -515,6 +513,17 @@ input{
     color: #FFF;
 }
 .weatherselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.weathertypeselector{
     margin-top: 20px;
     margin-left: 250px;
     border-radius: 5px;
