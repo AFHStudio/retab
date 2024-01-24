@@ -720,6 +720,10 @@ function weatherMetricpicker() {
       window.location.reload();
   });
 weathertypeselect.value = weatherpicker;
+if (localStorage.getItem("units") === null) {
+  localStorage.setItem("unittext", "°C")
+  localStorage.setItem("units", "metric")
+}
 }
 weatherMetricpicker();
 function iconpackswitcher() {
