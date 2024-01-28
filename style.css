@@ -18,6 +18,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url('https://fonts.cdnfonts.com/css/komika-axis');
+@import url('https://db.onlinewebfonts.com/c/800e985f75a5a56c2f7b4be502d286de?family=Burbank+Big+Condensed+Bold');
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+@import url('https://fonts.cdnfonts.com/css/gg-sans-2');
+@import url('https://fonts.cdnfonts.com/css/youtube-sans');
+@import url('https://fonts.cdnfonts.com/css/akira-expanded');
+@import url('https://fonts.cdnfonts.com/css/uber-move-text?styles=70995');
+@import url('https://fonts.cdnfonts.com/css/metrosant');
+@import url('https://fonts.cdnfonts.com/css/birica');
 *{
     margin: 0;
     padding: 0;
@@ -52,10 +63,12 @@
 .settingscontainer{
     background-color: rgba(18, 18, 18, 0.548);
     width: 100%;
-    height: 100vw;
-    
+    height: 100vw;  
     display: none;
     animation: slide-bottom 1s;
+    position: fixed;
+    right: 0;
+    left: 0;
 }
 .settingscontainer .settingsbutton:hover{
     color: rgb(255, 39, 39);
@@ -72,6 +85,13 @@
     padding-left: 250px;
     padding-top: 30px;
     font-size: 25px;
+}
+#videobg{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    right: 0;
+    bottom: 0;
 }
 .settingscontainer p{
     color: #FFF;
@@ -554,6 +574,17 @@ input{
     padding: 5px 25px;
     color: #FFF;
 }
+.videobgselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
 .settingscontainer #textcolorinput{
     margin-top: 20px;
     margin-left: 250px;
@@ -635,5 +666,36 @@ input{
     padding-left: 30px;
 }
 .settingscontainer .setcitybutton:hover{
+    cursor: pointer;
+}
+.settingscontainer #videolinkinput{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.settingscontainer .setvideolinkbutton{
+    border-radius: 5px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding-left: 30px;
+}
+.settingscontainer .setvideolinkbutton:hover{
+    cursor: pointer;
+}
+.settingscontainer .resetvideolinkbutton{
+    border-radius: 5px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding-left: 30px;
+}
+.settingscontainer .resetvideolinkbutton:hover{
     cursor: pointer;
 }

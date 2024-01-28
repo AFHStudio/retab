@@ -25,6 +25,9 @@
             <hr></hr>
             <input type="button" value="Continue" class="firstnamebutton" id="firstnamebutton"/>
         </div>
+        <video autoplay muted loop id="videobg" preload="auto">
+            <source src="" id="videosource" type="video/mp4">
+        </video>
         <div class="settingscontainer" id="settingscontainer">
             <button class="settingsbutton" id="settingsbutton1"><i class="fa-solid fa-x"></i></button>
             <ul class="sidebar">
@@ -106,6 +109,17 @@
                         <option value="geomanistthin" style="font-family: 'Geomanist', sans-serif; font-weight: 400;">Geomanist Thin</option>
                         <option value="minecrafteralt" style="font-family: 'Minecrafter Alt', sans-serif;">Minecrafter Alt</option>
                         <option value="kimberley" style="font-family: 'Kimberley', sans-serif;">Kimberley</option>
+                        <option value="honk" style="font-family: 'Honk', system-ui;">Honk</option>
+                        <option value="nabla" style="font-family: 'Nabla', system-ui;">Nabla</option>
+                        <option value="komikaaxis" style="font-family: 'Komika Axis', sans-serif;">Komika Axis</option>
+                        <option value="burbankbig" style="font-family: 'Burbank Big Condensed Bold';">Burbank Big Condensed Bold</option>
+                        <option value="segoeui" style="font-family: 'Segoe UI', sans-serif;">Segoe UI</option>
+                        <option value="ggsans" style="font-family: 'gg sans Medium', sans-serif;">gg sans</option>
+                        <option value="youtubesans" style="font-family: 'YouTube Sans', sans-serif;">YouTube Sans</option>
+                        <option value="akiraexpanded" style="font-family: 'Akira Expanded', sans-serif;">Akira Expanded</option>
+                        <option value="ubermove" style="font-family: 'Uber Move Text', sans-serif;">Uber Move</option>
+                        <option value="metrosant" style="font-family: 'Metrosant', sans-serif;">Metrosant</option>
+                        <option value="birica" style="font-family: 'Birica', sans-serif;">Birica</option>
                     </select>
                     <h3>Choose a background theme:</h3>
                     <select id="bgthemeselector" class="bgthemeselector">
@@ -172,10 +186,19 @@
                         <option value="on">On (Default)</option>
                         <option value="off">Off</option>
                     </select>
+                    <h3>Video Background:</h3>
+                    <select id="videobgselector" class="videobgselector">
+                        <option value="off">Off (Default)</option>
+                        <option value="on">On</option>
+                    </select>
+                    <h3 id="videobglinktext">Set the video background link:</h3>
+                    <input type="text" id="videolinkinput" placeholder='Link to MP4'/>
+                    <input type="button" value="Set" class="setvideolinkbutton" id="setvideolinkbutton"/>
+                    <input type="button" value="Reset" class="resetvideolinkbutton" id="resetvideolinkbutton"/>
                 </section>
                 <section id="aboutsection">
                 <h3 id="abouttext">About Homepage Revamped</h3>
-                <p id="version">v2.1.7 (12.24.2023)</p>
+                <p id="version">v2.1.9 (01.28.2024)</p>
                 <p id="sourcetext"><a id="sourcelink" href=https://github.com/AFHStudio/homepage-revamped>View the source code</a> on GitHub</p>
                 <p id="madewithlove">Made with <i class="fa-solid fa-heart"></i> by the AFHStudio team</p> 
                 <p id="thankssnow">Thanks to snowstorm.js for the snow, Copyright (c) 2003, Scott Schiller (schillmania.com) All rights reserved.</p>

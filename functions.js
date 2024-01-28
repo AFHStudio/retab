@@ -43,6 +43,11 @@ function resettimesize(){
   localStorage.removeItem('timesize');
   window.location.reload();
 }
+document.getElementById('resetvideolinkbutton').addEventListener('click', resetvideolink, false);
+function resetvideolink(){
+  localStorage.removeItem('videobglink');
+  window.location.reload();
+}
 document.addEventListener('DOMContentLoaded', function() {
 if (localStorage.getItem("user") === null) {
     document.getElementById('namedialog').style.display = "block";
@@ -736,3 +741,29 @@ function iconpackswitcher() {
 iconpackselect.value = iconpackpicker;
 }
 iconpackswitcher();
+function setvideolink() {
+  const videobginput = document.getElementById('videolinkinput').value;
+  window.localStorage.setItem('videobglink', videobginput);
+  window.location.reload();
+}
+document.getElementById('setvideolinkbutton').addEventListener('click', setvideolink, false);
+function weatherMetricpicker() {
+  const videobgtypeselect = document.getElementById("videobgselector");
+  const videobgpicker = localStorage.getItem("videobg") || "off";
+  videobgtypeselect.addEventListener("change", () => {
+      localStorage.setItem("videobg", videobgtypeselect.value);
+      window.location.reload();
+});
+videobgtypeselect.value = videobgpicker;
+}
+if (localStorage.getItem("videobg") === "on") {
+  const videobgelement = document.getElementById("videobg")
+  const videosource = document.getElementById("videosource")
+  const videolink = localStorage.getItem("videobglink")
+  videosource.setAttribute('src', videolink);
+  videobgelement.load();
+  videobgelement.play();
+  const main = document.getElementById("main")
+  main.style.backgroundImage = 'none'
+  document.body.backgroundImage = 'none'
+}
