@@ -747,7 +747,7 @@ function setvideolink() {
   window.location.reload();
 }
 document.getElementById('setvideolinkbutton').addEventListener('click', setvideolink, false);
-function weatherMetricpicker() {
+function videobgpicker() {
   const videobgtypeselect = document.getElementById("videobgselector");
   const videobgpicker = localStorage.getItem("videobg") || "off";
   videobgtypeselect.addEventListener("change", () => {
@@ -755,6 +755,10 @@ function weatherMetricpicker() {
       window.location.reload();
 });
 videobgtypeselect.value = videobgpicker;
+}
+videobgpicker()
+if (localStorage.getItem("videobg") === null) {
+  localStorage.setItem("videobg", "off")
 }
 if (localStorage.getItem("videobg") === "on") {
   const videobgelement = document.getElementById("videobg")

@@ -359,6 +359,10 @@
     background-size: auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    position: fixed;
+    right: 0;
+    left: 0;
+    text-align: center;
 }
 .namedialog h1{
     text-align: center;
@@ -376,9 +380,10 @@
 }
 .namedialog hr{
     font-size: 20px;
-    width: 880px;
+    width: 900px;
     animation: lineslide 2s;
     margin: auto;
+    text-align: center;
 }
 .namedialog #nameinputfirst{
     margin-left: 280px;
