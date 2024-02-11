@@ -771,3 +771,25 @@ if (localStorage.getItem("videobg") === "on") {
   main.style.backgroundImage = 'none'
   document.body.backgroundImage = 'none'
 }
+
+function soundvideobgpicker() {
+  const soundvideobgtypeselect = document.getElementById("soundvideobgselector");
+  const soundpicker = localStorage.getItem("soundvideobg") || "off";
+  soundvideobgtypeselect.addEventListener("change", () => {
+      localStorage.setItem("soundvideobg", soundvideobgtypeselect.value);
+      window.location.reload();
+});
+soundvideobgtypeselect.value = soundpicker;
+}
+soundvideobgpicker()
+
+
+if (localStorage.getItem("soundvideobg") === "on") {
+  const button = document.getElementById("videounmutebutton");
+  button.style.visibility = "visible";
+}
+document.getElementById('videounmutebutton').addEventListener('click', unmutevideo, false);
+function unmutevideo() {
+  const video = document.getElementById("videobg");
+  video.muted = !video.muted;
+}

@@ -13,6 +13,9 @@
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?gaming,retrogaming);
     background-size: 100%;
     background-repeat: no-repeat;
+    position: fixed;
+    right: 0;
+    left: 0;
 }
 body {
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://source.unsplash.com/random/1920x1080/?gaming,retrogaming);
@@ -73,7 +76,7 @@ body {
     animation: fadeIn 2s;
     margin-top: 170px;
 }
-#youtubeicon, #githubicon, #spotifyicon, #twittericon, #discordicon{
+#youtubeicon, #gmailicon, #spotifyicon, #twittericon, #discordicon{
     font-size: 40px;
     color: rgb(255, 255, 255);
     padding: 20px 15px;
@@ -81,7 +84,7 @@ body {
     transition: transform .2s;
     text-align: center;
 }
-#youtubeicon:hover, #githubicon:hover, #spotifyicon:hover, #twittericon:hover, #discordicon:hover{
+#youtubeicon:hover, #gmailicon:hover, #spotifyicon:hover, #twittericon:hover, #discordicon:hover{
     color:rgb(0, 255, 8);
     transform: scale(1.5);
 }
