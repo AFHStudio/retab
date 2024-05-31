@@ -1,14 +1,17 @@
 {
     "manifest_version": 3,
-    "name": "Homepage Revamped",
-    "version": "2.0.9",
-    "description": "A minimal new tab page without clutter.",
+    "name": "ReTab",
+    "version": "2.2.1",
+    "description": "Your new tab, reimagined.",
     "author": "AFHStudio",
     "chrome_url_overrides" : {
       "newtab": "home.html"
     },
+    "permissions": [
+      "topSites"
+    ],
     "icons": {
       "16": "16.png",
       "128": "128.png"
-    }    
+    }
   }
