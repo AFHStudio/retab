@@ -3,6 +3,57 @@ function setnewname() {
     window.localStorage.setItem('user', newname);
     window.location.reload();
 }
+chrome.topSites.get(function(data) {
+  var sitesList = document.getElementById('sites-list');
+  var sitenumber = 6;
+  if (localStorage.getItem('newicons') === `on`) {
+    sitesList.style.display = 'flex';
+    sitesList.style.flexWrap = 'wrap';
+    sitesList.style.justifyContent = 'center';
+  } 
+  if (localStorage.getItem('newicons') === `off`) {
+  }
+
+  for (var i = 0; i < Math.min(data.length, sitenumber); i++) {
+      var site = data[i];
+      var link = document.createElement('a');
+      link.href = site.url;
+      link.style.textDecoration = 'none';
+
+      var iconContainer = document.createElement('div');
+      iconContainer.style.width = '100px';
+      iconContainer.style.height = '80px';
+      iconContainer.style.backgroundColor = '#1c1c1c';
+      iconContainer.style.borderRadius = '10px';
+      iconContainer.style.display = 'flex';
+      iconContainer.style.flexDirection = 'column';
+      iconContainer.style.justifyContent = 'center';
+      iconContainer.style.alignItems = 'center';
+      iconContainer.style.marginRight = '15px';
+      iconContainer.style.marginTop = '40px';
+      iconContainer.style.animation = 'fadeIn 2s';
+
+      var favicon = document.createElement('img');
+      favicon.src = 'https://www.google.com/s2/favicons?domain=https://' + link.hostname;
+      favicon.style.width = '30px';
+      favicon.style.height = '30px';
+
+      var title = document.createElement('div');
+      title.innerText = site.title.length > 20 ? site.title.substring(0, 20) + '...' : site.title;
+      title.style.textAlign = 'center';
+      title.style.overflow = 'hidden';
+      title.style.textOverflow = 'ellipsis';
+      title.style.whiteSpace = 'nowrap';
+      title.style.width = '90px';
+      title.style.marginTop = '5px';
+      title.style.color = '#FFF';
+
+      iconContainer.appendChild(favicon);
+      iconContainer.appendChild(title);
+      link.appendChild(iconContainer);
+      sitesList.appendChild(link);
+  }
+});
 document.getElementById('resetyoutubebutton').addEventListener('click', resetyoutube, false);
 function resetyoutube(){
   localStorage.removeItem('youtubeurl');
@@ -363,34 +414,12 @@ else if (hrs >= 17 && hrs <= 24)
           greet + "," + " " + localStorage.getItem("user") + ".";
 
           function displayquote() {
-            var quotes = [
-              '"Success is not final; failure is not fatal: It is the courage to continue that counts."',
-              '"Develop success from failures. Discouragement and failure are two of the surest stepping stones to success."',
-              '"Success is getting what you want, happiness is wanting what you get."',
-              '"Success usually comes to those who are too busy looking for it."',
-              '"When we strive to become better than we are, everything around us becomes better too."',
-              '"Setting goals is the first step in turning the invisible into the visible."',
-              '"Opportunity is missed by most people because it is dressed in overalls and looks like work."',
-              '"Just one small positive thought in the morning can change your whole day."',
-              '"Love your family, work super hard, live your passion."',
-              '"It is never too late to be what you might have been."',
-              '"If you can dream it, you can do it."',
-              '"Do what you can, with what you have, where you are."',
-              '"Do the best you can. No one can do more than that."',
-              '"If you change the way you look at things, the things you look at change."',
-              '"It is often the small steps, not the giant leaps, that bring about the most lasting change."',
-              '"Education is the most powerful weapon which you can use to change the world."',
-              `"There is always light. If only we're brave enough to see it. If only we're brave enough to be it."`,
-              '"All our dreams can come true — if we have the courage to pursue them."',
-              '"Learn as if you will live forever, live like you will die tomorrow."',
-              '"When you change your thoughts, remember to also change your world."',
-              `"If you are working on something that you really care about, you don't have to be pushed. The vision pulls you."`,
-              `"Believe you can and you're halfway there."`,
-              '"The only way to do great work is to love what you do."',
-              `"The harder you work for something, the greater you'll feel when you achieve it."`
-            ];
-            var pick = Math.floor(Math.random() * (quotes.length));
-          document.getElementById("quote").innerText = (quotes[pick]);
+            fetch(`https://api.quotable.io/random?tags=motivational`)
+            .then(response => response.json())
+            .then(data => {
+              const quote = data.content
+              document.getElementById("quote").innerText = `"`+ quote + `"`;
+            })
           }
           function setquote() {
             const quote = document.getElementById('quoteinput').value;
@@ -616,7 +645,7 @@ initOldSearchSelector();
 function initIconsSwitcher() {
   const iconsselect = document.getElementById("iconsselector");
   const iconsstylesheetlink = document.getElementById("iconsstylesheet");
-  const currenticonsoption = localStorage.getItem("icons") || "on";
+  const currenticonsoption = localStorage.getItem("icons") || "off";
 
   function activateIconsOption(iconsoption) {
       iconsstylesheetlink.setAttribute("href", `themes/icons/${iconsoption}.css`);
@@ -673,6 +702,26 @@ function initQuoteSwitcher() {
   activateQuoteOption(currentquoteoption);
 }
 initQuoteSwitcher();
+function initNewIconsSwitcher() {
+  const newiconsselect = document.getElementById("newiconsselector");
+  const newiconsstylesheetlink = document.getElementById("newiconsstylesheet");
+  const currentnewiconsoption = localStorage.getItem("newicons") || "on";
+
+  function activateIconsOption(newiconsoption) {
+      newiconsstylesheetlink.setAttribute("href", `themes/newicons/${newiconsoption}.css`);
+  }
+
+  newiconsselect.addEventListener("change", () => {
+      activateIconsOption(newiconsselect.value);
+      localStorage.setItem("newicons", newiconsselect.value);
+      window.location.reload();
+  });
+
+
+  newiconsselect.value = currentnewiconsoption;
+  activateIconsOption(currentnewiconsoption);
+}
+initNewIconsSwitcher();
 function settextcolor() {
   const newcolor = document.getElementById('textcolorinput').value;
   window.localStorage.setItem('textcolor', newcolor);
@@ -793,3 +842,7 @@ function unmutevideo() {
   const video = document.getElementById("videobg");
   video.muted = !video.muted;
 }
+function opendropboxselector() {
+  window.open(href=`https://hr-dropbox-selector.vercel.app`, 'hi', 'width=900,height=200,scrollbars=no');
+}
+document.getElementById('opendropboxbutton').addEventListener('click', opendropboxselector, false);

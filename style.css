@@ -29,6 +29,7 @@
 @import url('https://fonts.cdnfonts.com/css/uber-move-text?styles=70995');
 @import url('https://fonts.cdnfonts.com/css/metrosant');
 @import url('https://fonts.cdnfonts.com/css/birica');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -174,6 +175,17 @@
 }
 .settingscontainer p a{
     color: white;
+}
+.settingscontainer .opendropboxbutton{
+    border-radius: 5px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    margin-top: 25px;
+    margin-left: 250px;
+}
+.settingscontainer .opendropboxbutton:hover{
+    cursor: pointer;
 }
 .searchbar{
     width: 30%;
@@ -472,9 +484,18 @@
     color:rgb(255, 0, 0);
     transform: scale(1.5);
 }
+@keyframes searchslide {
+    0% {
+      width: 0px;
+    }
+    100% {
+        width: 30%;
+    }
+}
 hr{
     width: 30%;
     margin: auto;
+    animation: searchslide 1s;
 }
 input{
     margin: auto;
@@ -536,6 +557,17 @@ input{
     color: #FFF;
 }
 .iconsselector{
+    margin-top: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    background-color: #343434;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 5px 25px;
+    color: #FFF;
+}
+.newiconsselector{
     margin-top: 20px;
     margin-left: 250px;
     border-radius: 5px;

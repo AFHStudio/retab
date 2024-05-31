@@ -7,13 +7,14 @@
         <link rel="stylesheet" id="fontstylesheet" href="fonts/inter.css">
         <link rel="stylesheet" id="bgstylesheet" href="themes/background/default.css">
         <link rel="stylesheet" id="oldsearchstylesheet" href="themes/searchbar/off.css">
-        <link rel="stylesheet" id="iconsstylesheet" href="themes/icons/on.css">
+        <link rel="stylesheet" id="iconsstylesheet" href="themes/icons/off.css">
         <link rel="stylesheet" id="weatherstylesheet" href="themes/weather/on.css">
         <link rel="stylesheet" id="quotestylesheet" href="themes/quote/on.css">
+        <link rel="stylesheet" id="newiconsstylesheet" href="themes/newicons/on.css">
         <script src="a1ad0aaccb.js" defer></script>
         <script src="functions.js" defer></script>
         <script id="snowscript" defer></script>
-        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <link rel="icon" type="image/x-icon" href="16.png">
         <meta charset="UTF-8">
         <meta content='width=device-width, initial-scale=1' name='viewport'/>
     </head>
@@ -22,7 +23,7 @@
             <source src="" id="videosource" type="video/mp4">
         </video>
         <div class="namedialog" id="namedialog">
-            <h2>Welcome to Homepage Revamped!</h2>
+            <h2>Welcome to ReTab!</h2>
             <h1>What's your name?</h1>
             <input type="text" id="nameinputfirst"/>
             <hr></hr>
@@ -120,6 +121,7 @@
                         <option value="ubermove" style="font-family: 'Uber Move Text', sans-serif;">Uber Move</option>
                         <option value="metrosant" style="font-family: 'Metrosant', sans-serif;">Metrosant</option>
                         <option value="birica" style="font-family: 'Birica', sans-serif;">Birica</option>
+                        <option value="jost" style="font-family: 'Jost', sans-serif;">Jost</option>
                     </select>
                     <h3>Choose a background theme:</h3>
                     <select id="bgthemeselector" class="bgthemeselector">
@@ -173,8 +175,8 @@
                     </select>
                     <h3>Icons/Links:</h3>
                     <select id="iconsselector" class="iconsselector">
-                        <option value="on">On (Default)</option>
-                        <option value="off">Off</option>
+                        <option value="off">Off (Default)</option>
+                        <option value="on">On</option>
                     </select>
                     <h3>Weather:</h3>
                     <select id="weatherselector" class="weatherselector">
@@ -183,6 +185,11 @@
                     </select>
                     <h3>Quote:</h3>
                     <select id="quoteselector" class="quoteselector">
+                        <option value="on">On (Default)</option>
+                        <option value="off">Off</option>
+                    </select>
+                    <h3>Recent Sites:</h3>
+                    <select id="newiconsselector" class="newiconsselector">
                         <option value="on">On (Default)</option>
                         <option value="off">Off</option>
                     </select>
@@ -200,15 +207,15 @@
                         <option value="off">Off (Default)</option>
                         <option value="on">On</option>
                     </select>
+                    <h3 id="videobglinktext">Set the video background file:</h3>
+                    <input type="button" class="opendropboxbutton" id="opendropboxbutton" value="Open">
                 </section>
                 <section id="aboutsection">
-                <h3 id="abouttext">About Homepage Revamped</h3>
-                <p id="version">v2.2.0 (02.10.2024)</p>
-                <p id="sourcetext"><a id="sourcelink" href=https://github.com/AFHStudio/homepage-revamped>View the source code</a> on GitHub</p>
+                <h3 id="abouttext">About ReTab</h3>
+                <p id="version">v2.2.1 (05.29.2024)</p>
+                <p id="sourcetext"><a id="sourcelink" href="https://github.com/AFHStudio/retab">View the source code</a> on GitHub</p>
                 <p id="madewithlove">Made with <i class="fa-solid fa-heart"></i> by the AFHStudio team</p> 
                 <p id="thankssnow">Thanks to snowstorm.js for the snow, Copyright (c) 2003, Scott Schiller (schillmania.com) All rights reserved.</p>
-                <h3 id='radiotext' style="padding-top: 50px;">Listen to our radio! This can be played on other settings pages and even when settings is closed!</h3>
-                <iframe src="https://radio.afhstudio.link/public/game_radio/embed?theme=dark" frameborder="0" allowtransparency="true" style="width: 30%; min-height: 150px; border: 0; margin-left: 250px; margin-top: 20px;"></iframe>           
                 </section>
         </div>
         <section class="main" id="main">
@@ -230,13 +237,14 @@
                 <a id="twitter" href="https://twitter.com/"><i id="twittericon" class="fa-brands fa-twitter"></i></a>
                 <a id="discord" href="https://discord.com/channels/@me"><i id="discordicon" class="fa-brands fa-discord"></i></a>
                 </div>
+                <div id="sites-list"></div>
                 <div class="search">
                     <form action="https://google.com/search" method="get" class="searchbar" id="searchbar">
                         <input type="text" placeholder="search the web" name="q">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
-                <hr>
+                <hr id="searchbarhr">
             <p class="quote" id="quote"></p>
             <i id="videounmutebutton" class="fa-solid fa-volume-high"></i>
         </section>
