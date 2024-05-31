@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head class="head">
+        <title>New Tab</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" id="themestylesheet" href="themes/default.css">
+        <link rel="stylesheet" id="fontstylesheet" href="fonts/inter.css">
+        <link rel="stylesheet" id="bgstylesheet" href="themes/background/default.css">
+        <link rel="stylesheet" id="oldsearchstylesheet" href="themes/searchbar/off.css">
+        <link rel="stylesheet" id="iconsstylesheet" href="themes/icons/off.css">
+        <link rel="stylesheet" id="weatherstylesheet" href="themes/weather/on.css">
+        <link rel="stylesheet" id="quotestylesheet" href="themes/quote/on.css">
+        <link rel="stylesheet" id="newiconsstylesheet" href="themes/newicons/on.css">
+        <script src="a1ad0aaccb.js" defer></script>
+        <script src="functions.js" defer></script>
+        <script id="snowscript" defer></script>
+        <link rel="icon" type="image/x-icon" href="16.png">
+        <meta charset="UTF-8">
+        <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    </head>
+    <body>
+        <video autoplay muted loop id="videobg" preload="auto">
+            <source src="" id="videosource" type="video/mp4">
+        </video>
+        <div class="namedialog" id="namedialog">
+            <h2>Welcome to ReTab!</h2>
+            <h1>What's your name?</h1>
+            <input type="text" id="nameinputfirst"/>
+            <hr></hr>
+            <input type="button" value="Continue" class="firstnamebutton" id="firstnamebutton"/>
+        </div>
+        <div class="settingscontainer" id="settingscontainer">
+            <button class="settingsbutton" id="settingsbutton1"><i class="fa-solid fa-x"></i></button>
+            <ul class="sidebar">
+                <h1><i class="fa-solid fa-gear"></i>Settings</h1>
+                <li id="general"><i class="fa-solid fa-house"></i>General</li>
+                <li id="appearance"><i class="fa-solid fa-paintbrush"></i>Appearance</li>
+                <li id="icons"><i class="fa-solid fa-font-awesome"></i>Custom Icons</li>
+                <li id="togglefeatures"><i class="fa-solid fa-toggle-on"></i>Toggle Features</li>
+                <li id="about"><i class="fa-solid fa-question"></i>About</li>
+                <li id="afhstudio"><i class="fa-solid fa-globe"></i>Visit AFHStudio</li>
+                <li id="kofi"><i class="fa-solid fa-mug-saucer"></i>Ko-fi</li>
+              </ul>
+              <section id="generalsection">
+                <h3 id="newnametext">Set a new name:</h3>
+                <input type="text" id="nameinput" placeholder='Name'/>
+                <input type="button" value="Set" class="setnamebutton" id="setnamebutton"/>
+                <h3 id="searchenginetext">Change your search engine:</h3>
+                <select id="searchenginechooser">
+                    <option value="google">Google</option>
+                    <option value="duckduckgo">DuckDuckGo</option>
+                    <option value="bravesearch">Brave Search</option>
+                    <option value="ecosia">Ecosia</option>
+                    <option value="bing">Bing</option>
+                </select>
+                    <h3 id="customquotetext">Set a custom quote:</h3>
+                    <input type="text" id="quoteinput" placeholder='Quote'/>
+                    <input type="button" value="Set" class="setquotebutton" id="setquotebutton"/>
+                    <input type="button" value="Reset" class="resetquotebutton" id="resetquotebutton"/>
+                    <h3 id="newweathertext">Set a new weather location:</h3>
+                    <input type="text" id="cityinput" placeholder='City'/>
+                    <input type="button" value="Set" class="setcitybutton" id="setcitybutton"/>
+                    <h3>Celsius / Fahrenheit</h3>
+                    <select id="weathertypeselector" class="weathertypeselector">
+                        <option value="metric">Celsius (Default)</option>
+                        <option value="imperial">Fahrenheit</option>
+                    </select>
+              </section>
+              
+                <section id="appearancesection">
+                    <h3 id="themetext">Choose a theme:</h3>
+                    <select id="themeselector" class="themeselector">
+                        <option value="default">Default</option>
+                        <option value="retro">Retro</option>
+                        <option value="redshards">Red Black Shards</option>
+                        <option value="blueshards">Blue Black Shards</option>
+                        <option value="greenshards">Green Black Shards</option>
+                        <option value="2basic4you">2basic4you</option>
+                        <option value="classroom">Classroom/School</option>
+                        <option value="space">Space</option>
+                        <option value="animals">Animals</option>
+                        <option value="nightfall">Nightfall</option>
+                        <option value="aurora">Aurora</option>
+                        <option value="ocean">Ocean</option>
+                        <option value="nord">Nord</option>
+                        <option value="cherryblossom">Cherry Blossom</option>
+                    </select>
+                    <h3 class="imagechoosertext" id="imagechoosertext">Change your background:</h3>
+                    <input type="file" accept="image/*" id="imagechooser" class="imagechooser">
+                    <input type="button" value="Reset Background" class="resetbackgroundbutton" id="resetbackgroundbutton"/>
+                    <h3>Choose a font:</h3>
+                    <select id="fontselector" class="fontselector">
+                        <option value="inter" style="font-family: 'Inter', sans-serif;">Inter (Default)</option>
+                        <option value="retro" style="font-family: 'Press Start 2P', cursive;">Retro</option>
+                        <option value="rubik" style="font-family: 'Rubik', sans-serif;">Rubik</option>
+                        <option value="roboto" style="font-family: 'Roboto', sans-serif;">Roboto</option>
+                        <option value="ubuntu" style="font-family: 'Ubuntu', sans-serif;">Ubuntu</option>
+                        <option value="montserrat" style="font-family: 'Montserrat', sans-serif;">Montserrat</option>
+                        <option value="sourcecodepro" style="font-family: 'Source Code Pro', monospace;">Source Code Pro</option>
+                        <option value="poppins" style="font-family: 'Poppins', sans-serif;">Poppins</option>
+                        <option value="merriweather" style="font-family: 'Merriweather', serif;">Merriweather</option>
+                        <option value="oswald" style="font-family: 'Oswald', sans-serif;">Oswald</option>
+                        <option value="notoserif" style="font-family: 'Noto Serif', serif;">Noto Serif</option>
+                        <option value="saira" style="font-family: 'Saira', sans-serif;">Saira</option>
+                        <option value="indieflower" style="font-family: 'Indie Flower', cursive;">Indie Flower</option>
+                        <option value="comicneue" style="font-family: 'Comic Neue', cursive;">Comic Neue</option>
+                        <option value="handjet" style="font-family: 'Handjet', cursive;">Handjet</option>
+                        <option value="productsans" style="font-family: 'Product Sans', sans-serif; font-weight: 400;">Product Sans</option>
+                        <option value="orbitron" style="font-family: 'Orbitron', sans-serif;">Orbitron</option>
+                        <option value="geomanistthin" style="font-family: 'Geomanist', sans-serif; font-weight: 400;">Geomanist Thin</option>
+                        <option value="minecrafteralt" style="font-family: 'Minecrafter Alt', sans-serif;">Minecrafter Alt</option>
+                        <option value="kimberley" style="font-family: 'Kimberley', sans-serif;">Kimberley</option>
+                        <option value="honk" style="font-family: 'Honk', system-ui;">Honk</option>
+                        <option value="nabla" style="font-family: 'Nabla', system-ui;">Nabla</option>
+                        <option value="komikaaxis" style="font-family: 'Komika Axis', sans-serif;">Komika Axis</option>
+                        <option value="burbankbig" style="font-family: 'Burbank Big Condensed Bold';">Burbank Big Condensed Bold</option>
+                        <option value="segoeui" style="font-family: 'Segoe UI', sans-serif;">Segoe UI</option>
+                        <option value="ggsans" style="font-family: 'gg sans Medium', sans-serif;">gg sans</option>
+                        <option value="youtubesans" style="font-family: 'YouTube Sans', sans-serif;">YouTube Sans</option>
+                        <option value="akiraexpanded" style="font-family: 'Akira Expanded', sans-serif;">Akira Expanded</option>
+                        <option value="ubermove" style="font-family: 'Uber Move Text', sans-serif;">Uber Move</option>
+                        <option value="metrosant" style="font-family: 'Metrosant', sans-serif;">Metrosant</option>
+                        <option value="birica" style="font-family: 'Birica', sans-serif;">Birica</option>
+                        <option value="jost" style="font-family: 'Jost', sans-serif;">Jost</option>
+                    </select>
+                    <h3>Choose a background theme:</h3>
+                    <select id="bgthemeselector" class="bgthemeselector">
+                        <option value="default">Default (matches theme)</option>
+                        <option value="retro">Retro</option>
+                        <option value="greenshards">Green Black Shards</option>
+                        <option value="redshards">Red Black Shards</option>
+                        <option value="blueshards">Blue Black Shards</option>
+                        <option value="tech">Tech</option>
+                        <option value="developer">Developer/Code</option>
+                        <option value="cherryblossom">Cherry Blossom</option>
+                        <option value="space">Space</option>
+                        <option value="aurora">Aurora</option>
+                        <option value="halloween">Halloween</option>
+                        <option value="christmas">Christmas</option>
+                    </select>
+                    <h3>Old Searchbar?</h3>
+                    <select id="oldsearchselector" class="oldsearchselector">
+                        <option value="off">Off (Default)</option>
+                        <option value="on">On</option>
+                    </select>
+                    <h3>Set global text and icon color:</h3>
+                    <input type="text" id="textcolorinput" placeholder='Hex code / HTML Color'/>
+                    <input type="button" value="Set" class="setcolorbutton" id="setcolorbutton"/>
+                    <input type="button" value="Reset" class="resettextcolorbutton" id="resettextcolorbutton"/>
+                    <h3>Set time's text size:</h3>
+                    <input type="text" id="timesizeinput" placeholder='Size (in px)'/>
+                    <input type="button" value="Set" class="settimesizebutton" id="settimesizebutton"/>
+                    <input type="button" value="Reset" class="resettimesizebutton" id="resettimesizebutton"/>
+                    <h3>Icon Pack:</h3>
+                    <select id="iconpackselector" class="iconpackselector">
+                        <option value="default">Default</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="developer">Developer</option>
+                    </select>
+                </section>
+                <section id="customiconssection">
+                <h3 id="customicontext">Change the icons on your homepage (FOR EXPERIENCED USERS ONLY)</h3>
+                <p>Get icons from <a href='https://fontawesome.com'>Font Awesome and copy the text in the class="copythispart". Only fa-solid and fa-brands work for now.</a></p>
+                <i id="customyoutube" class="fa-brands fa-youtube"></i></a><input type="text" id="youtubeurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="youtubeiconinput"><input type="button" value="Set" class="setyoutubebutton" id="setyoutubebutton"/><input type="button" value="Reset" class="resetyoutubebutton" id="resetyoutubebutton"/>
+                <i id="customgmail" class="fa-solid fa-envelope"></i></a><input type="text" id="gmailurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="gmailiconinput"><input type="button" value="Set" class="setgmailbutton" id="setgmailbutton"/><input type="button" value="Reset" class="resetgmailbutton" id="resetgmailbutton"/>
+                <i id="customspotify" class="fa-brands fa-spotify"></i></a><input type="text" id="spotifyurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="spotifyiconinput"><input type="button" value="Set" class="setspotifybutton" id="setspotifybutton"/><input type="button" value="Reset" class="resetspotifybutton" id="resetspotifybutton"/>
+                <i id="customtwitter" class="fa-brands fa-twitter"></i></a><input type="text" id="twitterurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="twittericoninput"><input type="button" value="Set" class="setdiscordbutton" id="settwitterbutton"/><input type="button" value="Reset" class="resettwitterbutton" id="resettwitterbutton"/>
+                <i id="customdiscord" class="fa-brands fa-discord"></i></a><input type="text" id="discordurlinput" placeholder='URL'><input type="text" placeholder='Icon ID' id="discordiconinput"><input type="button" value="Set" class="setdiscordbutton" id="setdiscordbutton"/><input type="button" value="Reset" class="resetdiscordbutton" id="resetdiscordbutton"/>
+                </section>
+                <section id="togglefeaturessection">
+                    <h3>Snow:</h3>
+                    <select id="snowselector" class="snowselector">
+                        <option value="off">Off (Default)</option>
+                        <option value="on">On</option>
+                    </select>
+                    <h3>Icons/Links:</h3>
+                    <select id="iconsselector" class="iconsselector">
+                        <option value="off">Off (Default)</option>
+                        <option value="on">On</option>
+                    </select>
+                    <h3>Weather:</h3>
+                    <select id="weatherselector" class="weatherselector">
+                        <option value="on">On (Default)</option>
+                        <option value="off">Off</option>
+                    </select>
+                    <h3>Quote:</h3>
+                    <select id="quoteselector" class="quoteselector">
+                        <option value="on">On (Default)</option>
+                        <option value="off">Off</option>
+                    </select>
+                    <h3>Recent Sites:</h3>
+                    <select id="newiconsselector" class="newiconsselector">
+                        <option value="on">On (Default)</option>
+                        <option value="off">Off</option>
+                    </select>
+                    <h3>Video Background:</h3>
+                    <select id="videobgselector" class="videobgselector">
+                        <option value="off">Off (Default)</option>
+                        <option value="on">On</option>
+                    </select>
+                    <h3 id="videobglinktext">Set the video background link:</h3>
+                    <input type="text" id="videolinkinput" placeholder='Link to MP4'/>
+                    <input type="button" value="Set" class="setvideolinkbutton" id="setvideolinkbutton"/>
+                    <input type="button" value="Reset" class="resetvideolinkbutton" id="resetvideolinkbutton"/>
+                    <h3>Video Background Sound Button:</h3>
+                    <select id="soundvideobgselector" class="soundvideobgselector">
+                        <option value="off">Off (Default)</option>
+                        <option value="on">On</option>
+                    </select>
+                    <h3 id="videobglinktext">Set the video background file:</h3>
+                    <input type="button" class="opendropboxbutton" id="opendropboxbutton" value="Open">
+                </section>
+                <section id="aboutsection">
+                <h3 id="abouttext">About ReTab</h3>
+                <p id="version">v2.2.1 (05.29.2024)</p>
+                <p id="sourcetext"><a id="sourcelink" href="https://github.com/AFHStudio/retab">View the source code</a> on GitHub</p>
+                <p id="madewithlove">Made with <i class="fa-solid fa-heart"></i> by the AFHStudio team</p> 
+                <p id="thankssnow">Thanks to snowstorm.js for the snow, Copyright (c) 2003, Scott Schiller (schillmania.com) All rights reserved.</p>
+                </section>
+        </div>
+        <section class="main" id="main">
+            <div id="weatherwidget">
+                <img src="" id="weathericon">
+                <div id="weather"></div>
+                <div id="city"></div>
+                </div>
+            <button class="settingsbutton" id="settingsbutton2"><i class="fa-solid fa-gear"></i></button>
+            <div class="datetime">
+                <div class="date"></div>
+                <div class="time"></div>
+            </div>
+            <h1 id="welcome"></h1>
+            <div class="quicklinks">
+                <a id="youtube" href="https://youtube.com/"><i id="youtubeicon" class="fa-brands fa-youtube"></i></a>
+                <a id="gmail" href="https://mail.google.com/"><i id="gmailicon" class="fa-solid fa-envelope"></i></a>
+                <a id="spotify" href="https://open.spotify.com"><i id="spotifyicon" class="fa-brands fa-spotify"></i></a>
+                <a id="twitter" href="https://twitter.com/"><i id="twittericon" class="fa-brands fa-twitter"></i></a>
+                <a id="discord" href="https://discord.com/channels/@me"><i id="discordicon" class="fa-brands fa-discord"></i></a>
+                </div>
+                <div id="sites-list"></div>
+                <div class="search">
+                    <form action="https://google.com/search" method="get" class="searchbar" id="searchbar">
+                        <input type="text" placeholder="search the web" name="q">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                <hr id="searchbarhr">
+            <p class="quote" id="quote"></p>
+            <i id="videounmutebutton" class="fa-solid fa-volume-high"></i>
+        </section>
+        </div>
+    </body>
+</html>
