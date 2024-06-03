@@ -32,9 +32,9 @@ chrome.topSites.get(function(data) {
       iconContainer.style.marginRight = '15px';
       iconContainer.style.marginTop = '40px';
       iconContainer.style.animation = 'fadeIn 2s';
-
+    
       var favicon = document.createElement('img');
-      favicon.src = 'https://www.google.com/s2/favicons?domain=https://' + link.hostname;
+      favicon.src = 'https://icons.duckduckgo.com/ip3/' + link.hostname + '.ico';
       favicon.style.width = '30px';
       favicon.style.height = '30px';
 
@@ -226,18 +226,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('aboutsection').style.display = 'none';
     document.getElementById('customiconssection').style.visibility = 'hidden';
     document.getElementById('customiconssection').style.display = 'none';
-    document.getElementById('togglefeaturessection').style.visibility = 'hidden';
-    document.getElementById('togglefeaturessection').style.display = 'none';
-  })
-  document.getElementById('icons').addEventListener('click', () => {
-    document.getElementById('generalsection').style.visibility = 'hidden';
-    document.getElementById('generalsection').style.display = 'none';
-    document.getElementById('appearancesection').style.visibility = 'hidden';
-    document.getElementById('appearancesection').style.display = 'none';
-    document.getElementById('aboutsection').style.visibility = 'hidden';
-    document.getElementById('aboutsection').style.display = 'none';
-    document.getElementById('customiconssection').style.visibility = 'visible';
-    document.getElementById('customiconssection').style.display = 'block';
     document.getElementById('togglefeaturessection').style.visibility = 'hidden';
     document.getElementById('togglefeaturessection').style.display = 'none';
   })
